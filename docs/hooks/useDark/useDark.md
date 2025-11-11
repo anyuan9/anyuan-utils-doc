@@ -23,7 +23,7 @@ const toggle = inject("toggle-appearance", () => {
 <!-- <demoDark /> -->
 
 <naive-theme>
-  <n-button class="mt-2" @click="toggle">{{ `当前网页处于 ${isDark ? 'dark' : 'light'} 主题，点击切换主题` }}</n-button>
+  <n-button class="mt-2" @click="toggle">当前网页处于{{ isDark ? 'dark' : 'light' }}主题，点击切换主题</n-button>
 </naive-theme>
 
 <details>
