@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@anyuan/utils':
-        specifier: ^0.0.1
-        version: 0.0.1(echarts@5.6.0)(vue@3.5.13(typescript@5.7.3))
+        specifier: 1.0.0-beta.1
+        version: 1.0.0-beta.1(echarts@5.6.0)(vue@3.5.13(typescript@5.7.3))
       '@esmjs/geo':
         specifier: ^1.0.0
         version: 1.0.0
@@ -168,8 +168,9 @@ packages:
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
 
-  '@anyuan/utils@0.0.1':
-    resolution: {integrity: sha512-FQjnGFQrU5Iycp/WgEQVSgyRKVnRy570ce9iEhbXsYcto5gA9Gk/g2DLyxYSbdWmBlacTeSdnVsHAcBhUs+x+w==}
+  '@anyuan/utils@1.0.0-beta.1':
+    resolution: {integrity: sha512-fgapyYU2lv8pEijZqtu/Dzr8BAZo5m1ObsCpp864jwt5AJ/9I8FLZAZnF9fjRrUS3j045XQ61UoALKKbsw/9Lg==}
+    engines: {node: '>=16.15.0'}
     peerDependencies:
       echarts: '*'
       vue: '*'
@@ -1972,7 +1973,7 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@anyuan/utils@0.0.1(echarts@5.6.0)(vue@3.5.13(typescript@5.7.3))':
+  '@anyuan/utils@1.0.0-beta.1(echarts@5.6.0)(vue@3.5.13(typescript@5.7.3))':
     optionalDependencies:
       echarts: 5.6.0
       vue: 3.5.13(typescript@5.7.3)

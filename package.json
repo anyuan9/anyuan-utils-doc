@@ -14,10 +14,13 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
+    "preview": "pnpm build && vitepress preview docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
     "format": "prettier --check --write .",
     "clean": "pnpm store prune && pnpm install",
-    "svgo": "svgo -f . -r",
-    "preview": "pnpm build && vitepress preview docs --port 8084"
+    "svgo": "svgo -f . -r"
   },
   "license": "MIT",
   "author": {
@@ -25,7 +28,7 @@
     "url": "https://github.com/anyuan"
   },
   "devDependencies": {
-    "@anyuan/utils": "^0.0.1",
+    "@anyuan/utils": "1.0.0-beta.1",
     "@esmjs/geo": "^1.0.0",
     "@faker-js/faker": "^8.4.1",
     "@vicons/ionicons5": "^0.12.0",
