@@ -1,12 +1,12 @@
-<script setup>
+<!-- <script setup>
 import describe from './describe.vue'
 import tags from './tags.vue'
-</script>
+</script> -->
 
-<ClientOnly>
+<!-- <ClientOnly>
   <describe />
   <wordCloud/>
-</ClientOnly>
+</ClientOnly> -->
 
 <!-- ## 🏷️ 标签
 
@@ -34,11 +34,9 @@ npm install @anyuan/utils
 
 ### 📡 `CDN`
 
-
 :::
 
 ### 📚 示例
-
 
 ### 🤔 常见问题、反馈
 

@@ -176,10 +176,15 @@ export default defineConfig({
       //   ssrFiles:["./cache/deps/*.js"]
       // }
     },
+    ssr: {
+      noExternal: ["naive-ui", "vueuc"]
+    },
     optimizeDeps: {
       include: [
         "axios",
         "typeit",
+        "naive-ui",
+        "vueuc",
         "highlight.js",
         "@vicons/ionicons5",
         "@faker-js/faker/locale/en"
