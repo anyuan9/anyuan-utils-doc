@@ -1,0 +1,12 @@
+[build]
+  command = "pnpm run docs:build"
+  publish = "docs/.vitepress/dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# 重定向配置（单页应用支持）
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
