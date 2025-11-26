@@ -9,7 +9,7 @@
 
 ## 👀 预览
 
-[查看文档](https://pure-admin-utils.netlify.app)
+[查看文档](https://anyuan-utils.netlify.app/)
 
 ## 📡 安装依赖
 

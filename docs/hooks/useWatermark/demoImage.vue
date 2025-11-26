@@ -15,7 +15,7 @@ onMounted(() => {
       imageWidth: 40,
       imageHeight: 40,
       rotate: -30,
-      image: "https://xiaoxian521.github.io/hyperlink/svg/pure.svg"
+      image: "https://anyuan-utils.netlify.app/logo.svg"
     });
 
     setGrayWatermark("图片加载失败、我就显示", {
@@ -25,9 +25,7 @@ onMounted(() => {
       rotate: -30,
       // shadowConfig: [20],
       globalAlpha: 0.3,
-      image: await imageToGrayScale(
-        "https://xiaoxian521.github.io/hyperlink/svg/pure.svg"
-      )
+      image: await imageToGrayScale("https://anyuan-utils.netlify.app/logo.svg")
     });
   });
 });

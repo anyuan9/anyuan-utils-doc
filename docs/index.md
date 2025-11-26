@@ -14,10 +14,10 @@ hero:
       link: /guide/guide
     - theme: alt icon-github
       text: 文档仓库
-      link: https://github.com/anyuan9/anyuan-utils
+      link: https://github.com/anyuan9/anyuan-utils-doc
     - theme: doc icon-doc
       text: 在线文档
-      link: https://pure-admin.github.io/pure-admin-doc
+      link: https://anyuan-utils.netlify.app/
 
 features:
   - icon: 🌎

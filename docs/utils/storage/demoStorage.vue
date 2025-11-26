@@ -3,8 +3,8 @@ import { onMounted, ref } from "vue";
 import { getLocalStorage, getSessionStorage } from "@anyuan/utils";
 
 // 获取存储实例
-const localStorage = getLocalStorage();
-const sessionStorage = getSessionStorage();
+let localStorage = null;
+let sessionStorage = null;
 
 // setItem 测试数据
 const setItemRes = ref<
@@ -48,26 +48,29 @@ const clearRes = ref<
 
 // 初始化测试数据
 onMounted(() => {
+  localStorage = getLocalStorage();
+  sessionStorage = getSessionStorage();
+
   initializeTestData();
 });
 
 const initializeTestData = () => {
   // 先清理可能存在的测试数据
-  localStorage.removeItem("test_string");
-  localStorage.removeItem("test_number");
-  localStorage.removeItem("test_object");
-  localStorage.removeItem("test_array");
-  localStorage.removeItem("test_boolean");
-  localStorage.removeItem("test_null");
-  localStorage.removeItem("test_nonexistent");
+  localStorage && localStorage.removeItem("test_string");
+  localStorage && localStorage.removeItem("test_number");
+  localStorage && localStorage.removeItem("test_object");
+  localStorage && localStorage.removeItem("test_array");
+  localStorage && localStorage.removeItem("test_boolean");
+  localStorage && localStorage.removeItem("test_null");
+  localStorage && localStorage.removeItem("test_nonexistent");
 
-  sessionStorage.removeItem("test_string");
-  sessionStorage.removeItem("test_number");
-  sessionStorage.removeItem("test_object");
-  sessionStorage.removeItem("test_array");
-  sessionStorage.removeItem("test_boolean");
-  sessionStorage.removeItem("test_null");
-  sessionStorage.removeItem("test_nonexistent");
+  sessionStorage && sessionStorage.removeItem("test_string");
+  sessionStorage && sessionStorage.removeItem("test_number");
+  sessionStorage && sessionStorage.removeItem("test_object");
+  sessionStorage && sessionStorage.removeItem("test_array");
+  sessionStorage && sessionStorage.removeItem("test_boolean");
+  sessionStorage && sessionStorage.removeItem("test_null");
+  sessionStorage && sessionStorage.removeItem("test_nonexistent");
 
   // setItem 测试用例
   setItemRes.value = [
