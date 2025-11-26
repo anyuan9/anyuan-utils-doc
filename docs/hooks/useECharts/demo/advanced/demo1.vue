@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useIntervalFn } from "@vueuse/core";
 import type { EChartsOption } from "echarts";
 import { useDark, useECharts } from "@anyuan/utils";
@@ -213,22 +213,22 @@ function generateData(totalNum, bigvalue, smallvalue, color, width) {
   return dataArr;
 }
 
-let threeData = generateData(6, 30, 10, "rgba(28, 211, 230, 1)", 5);
-let fourData = generateData(12, 80, 10, "rgba(91, 84, 255, 1)", 1);
-let radius1 = ["41%", "38%"];
-let radius2 = ["40%", "39%"];
-let height = document.body.clientHeight;
-if (height < 1000) {
-  radius1 = ["43%", "40%"];
-  radius2 = ["42%", "41%"];
-}
-
 let startAngle = 50; // 初始旋转角度
 let startAngle2 = 50; // 初始旋转角度
 let [minradius, radius, maxradius] = [24, 24, 28]; // 初始缩放尺寸
 let isBig = true; // 缩放动画 标识
 
 function getOptions() {
+  let threeData = generateData(6, 30, 10, "rgba(28, 211, 230, 1)", 5);
+  let fourData = generateData(12, 80, 10, "rgba(91, 84, 255, 1)", 1);
+  let radius1 = ["41%", "38%"];
+  let radius2 = ["40%", "39%"];
+  let height = document.body.clientHeight;
+  if (height < 1000) {
+    radius1 = ["43%", "40%"];
+    radius2 = ["42%", "41%"];
+  }
+
   return {
     clear: false,
     backgroundColor: "#1b1b1f",
@@ -382,8 +382,10 @@ function draw() {
   setOption(getOptions());
 }
 
-draw();
-useIntervalFn(draw, 200);
+onMounted(() => {
+  draw();
+  useIntervalFn(draw, 200);
+});
 </script>
 
 <template>

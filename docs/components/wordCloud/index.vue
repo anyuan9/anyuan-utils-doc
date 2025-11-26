@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useData } from "./data";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vitepress";
 import { Reload } from "@vicons/ionicons5";
 import { useEventListener } from "@vueuse/core";
 import "../../.vitepress/plugins/wordCloud"; // 路径要写完整，确保打包时引用正确
 import { hooks } from "../../.vitepress/utils/sortHooks";
-import { randomColor, useECharts, debounce } from "@anyuan/utils";
+import { randomColor, useECharts, debounce, isBrowser } from "@anyuan/utils";
 import { useData as useDark } from "vitepress";
 
 const loading = ref(true);
@@ -67,14 +67,17 @@ setOption(
   }
 );
 
-useEventListener(
-  window,
-  "resize",
-  debounce(() => {
-    loading.value = true;
-    resize();
-  })
-);
+onMounted(() => {
+  isBrowser() &&
+    useEventListener(
+      window,
+      "resize",
+      debounce(() => {
+        loading.value = true;
+        resize();
+      })
+    );
+});
 </script>
 
 <template>

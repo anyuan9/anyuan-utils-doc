@@ -2,16 +2,21 @@
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { nextTick, provide } from "vue";
-import { NConfigProvider } from 'naive-ui'
+import { NConfigProvider } from "naive-ui";
+import { isBrowser } from "@anyuan/utils";
 
 const { isDark } = useData();
 
-const enableTransitions = () =>
-  "startViewTransition" in document &&
-  window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+const enableTransitions = () => {
+  return (
+    isBrowser() &&
+    "startViewTransition" in document &&
+    window.matchMedia("(prefers-reduced-motion: no-preference)").matches
+  );
+};
 
 provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
-  if (!enableTransitions()) {
+  if (!isBrowser() || !enableTransitions()) {
     isDark.value = !isDark.value;
     return;
   }

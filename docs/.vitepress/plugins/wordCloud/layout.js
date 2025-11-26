@@ -1,5 +1,7 @@
+import { isBrowser } from "@anyuan/utils";
+
 // setImmediate
-if (!window.setImmediate) {
+if (isBrowser() && !window.setImmediate) {
   window.setImmediate = (function setupSetImmediate() {
     return (
       window.msSetImmediate ||
@@ -70,7 +72,7 @@ if (!window.setImmediate) {
   })();
 }
 
-if (!window.clearImmediate) {
+if (isBrowser() && !window.clearImmediate) {
   window.clearImmediate = (function setupClearImmediate() {
     return (
       window.msClearImmediate ||
@@ -88,6 +90,9 @@ if (!window.clearImmediate) {
 
 // Check if WordCloud can run on this browser
 var isSupported = (function isSupported() {
+  if (!isBrowser()) {
+    return false;
+  }
   var canvas = document.createElement("canvas");
   if (!canvas || !canvas.getContext) {
     return false;

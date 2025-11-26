@@ -13,7 +13,6 @@ import naive from "naive-ui";
 import vue3PhotoPreview from "vue3-photo-preview";
 import "vue3-photo-preview/dist/index.css";
 
-import { useECharts } from "../plugins/echarts";
 import {
   DividerBase,
   DividerOptions,
@@ -57,6 +56,5 @@ export default {
     app.component("visual-load", VisualLoad);
     app.component("preview-image", PreviewImage);
     app.component("theme-change", ThemeChange);
-    app.use(useECharts);
   }
 } satisfies Theme;

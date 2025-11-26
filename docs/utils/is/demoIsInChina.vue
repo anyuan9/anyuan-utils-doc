@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { isOutOfChina } from "@anyuan/utils";
+import { isInChina } from "@anyuan/utils";
 
-// isOutOfChina 测试数据
-const isOutOfChinaRes = ref<Array<{ label: string; lng: number; lat: number }>>(
+// isInChina 测试数据
+const isInChinaRes = ref<Array<{ label: string; lng: number; lat: number }>>(
   []
 );
-isOutOfChinaRes.value = [
+isInChinaRes.value = [
   { label: "北京", lng: 116.4, lat: 39.9 },
   { label: "上海", lng: 121.47, lat: 31.23 },
   { label: "台湾", lng: 121.5, lat: 25.05 },
@@ -22,16 +22,16 @@ isOutOfChinaRes.value = [
 <template>
   <naive-theme>
     <div
-      v-for="(item, index) in isOutOfChinaRes"
+      v-for="(item, index) in isInChinaRes"
       :key="index"
       className="flex flex-col justify-center mt-2"
     >
       <div>
         <span className="font-bold">{{ item.label }}</span>
-        <span className="ml-2"> isOutOfChina({{ (item.lng, item.lat) }})</span>
+        <span className="ml-2"> isInChina({{ item.lng }}, {{ item.lat }})</span>
       </div>
       <n-gradient-text type="info">
-        // {{ isOutOfChina(item.lng, item.lat) }}
+        // {{ isInChina(item.lng, item.lat) }}
       </n-gradient-text>
     </div>
   </naive-theme>

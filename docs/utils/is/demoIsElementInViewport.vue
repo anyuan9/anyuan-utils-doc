@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { isElementInViewport } from "@anyuan/utils";
 
-// isElementInViewport 测试数据
 const isElementInViewportRes = ref<Array<{ label: string; value: any }>>([]);
-isElementInViewportRes.value = [
-  { label: "视口内元素", value: document.createElement("div") },
-  { label: "视口外元素", value: document.createElement("div") }
-];
+
+onMounted(() => {
+  if (typeof document !== "undefined") {
+    isElementInViewportRes.value = [
+      { label: "视口内元素", value: document.createElement("div") },
+      { label: "视口外元素", value: document.createElement("div") }
+    ];
+  }
+});
 </script>
 
 <template>

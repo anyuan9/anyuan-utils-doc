@@ -18,6 +18,7 @@
 
     <!-- 表格 -->
     <n-data-table
+      v-if="showTable"
       :columns="tableColumns"
       :data="tableData"
       :pagination="pagination"
@@ -27,8 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, h, computed } from "vue";
-import { NButton, NTag, useMessage } from "naive-ui";
+import { ref, h, computed, resolveComponent, onMounted } from "vue";
 import { useTable } from "@anyuan/utils";
 
 // 定义数据类型
@@ -49,50 +49,7 @@ interface SearchParams {
   status?: boolean;
 }
 
-const tableColumns = [
-  {
-    title: "ID",
-    key: "id"
-  },
-  {
-    title: "名称",
-    key: "name"
-  },
-  {
-    title: "状态",
-    key: "status",
-    render: row => {
-      return h(
-        NTag,
-        {
-          type: row.status ? "success" : "error",
-          size: "large"
-        },
-        { default: () => (row.status ? "启用" : "禁用") }
-      );
-    }
-  },
-  {
-    title: "创建时间",
-    key: "createTime"
-  },
-  {
-    title: "操作",
-    key: "action",
-    render: row => {
-      return h(
-        NButton,
-        {
-          strong: true,
-          tertiary: true,
-          size: "small",
-          onClick: () => handleEdit(row)
-        },
-        { default: () => "编辑" }
-      );
-    }
-  }
-];
+const tableColumns = ref([]);
 
 // 模拟 API 请求
 const mockApi = (params: SearchParams) => {
@@ -186,4 +143,53 @@ const getFilteredSelection = () => {
   const enabledItems = handleSelectionFilter(item => item.status);
   console.log("启用的项目:", enabledItems);
 };
+
+const showTable = ref(false);
+onMounted(() => {
+  tableColumns.value = [
+    {
+      title: "ID",
+      key: "id"
+    },
+    {
+      title: "名称",
+      key: "name"
+    },
+    {
+      title: "状态",
+      key: "status",
+      render: row => {
+        return h(
+          resolveComponent("NTag"),
+          {
+            type: row.status ? "success" : "error",
+            size: "large"
+          },
+          { default: () => (row.status ? "启用" : "禁用") }
+        );
+      }
+    },
+    {
+      title: "创建时间",
+      key: "createTime"
+    },
+    {
+      title: "操作",
+      key: "action",
+      render: row => {
+        return h(
+          resolveComponent("NButton"),
+          {
+            strong: true,
+            tertiary: true,
+            size: "small",
+            onClick: () => handleEdit(row)
+          },
+          { default: () => "编辑" }
+        );
+      }
+    }
+  ];
+  showTable.value = true;
+});
 </script>

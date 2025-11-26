@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 // import type { FormInstance, FormRules } from "element-plus";
 // import { ElMessage } from "element-plus";
 import type { FormInst, FormItemInst, FormItemRule, FormRules } from "naive-ui";
@@ -22,11 +22,7 @@ const treeData = [
   }
 ];
 
-const selectOptions = [
-  { label: "选项1", value: "1" },
-  { label: "选项2", value: "2" },
-  { label: "选项3", value: "3" }
-];
+const selectOptions = ref([]);
 
 const formRef = ref<FormInst | null>(null);
 
@@ -273,8 +269,8 @@ const formRules: FormRules = {
 
   // 日期时间验证
   dateValid: [validator.dateValid("date")],
-  datetime: [validator.datetime("datetime")],
-  datetimePast: [validator.datetimePast("datetime")],
+  datetime: [validator.datetime("string")],
+  datetimePast: [validator.datetimePast("string")],
   datetimeRange: [validator.datetimeRange()],
   datetimeRangePast: [validator.datetimeRangePast()],
   dateISO: [validator.dateISO()],
@@ -305,6 +301,17 @@ const handleReset = () => {
   formRef.value?.restoreValidation();
   // formRef.value?.resetFields();
 };
+
+const showForm = ref(false);
+onMounted(() => {
+  showForm.value = true;
+
+  selectOptions.value = [
+    { label: "选项1", value: "1" },
+    { label: "选项2", value: "2" },
+    { label: "选项3", value: "3" }
+  ];
+});
 </script>
 
 <template>
@@ -312,6 +319,7 @@ const handleReset = () => {
     <h1>表单校验测试页面</h1>
 
     <n-form
+      v-if="showForm"
       ref="formRef"
       :model="formData"
       :rules="formRules"

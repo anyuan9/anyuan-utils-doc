@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { isElement } from "@anyuan/utils";
 
-// 由于部分函数需要DOM元素，这里创建一些简单的测试
 const isElementRes = ref<Array<{ label: string; value: any }>>([]);
-isElementRes.value = [
-  { label: "DOM元素", value: document.createElement("div") },
-  { label: "文本节点", value: document.createTextNode("test") },
-  { label: "普通对象", value: {} },
-  { label: "null", value: null }
-];
+
+onMounted(() => {
+  if (typeof document !== "undefined") {
+    isElementRes.value = [
+      { label: "DOM元素", value: document.createElement("div") },
+      { label: "文本节点", value: document.createTextNode("test") },
+      { label: "普通对象", value: {} },
+      { label: "null", value: null }
+    ];
+  }
+});
 </script>
 
 <template>

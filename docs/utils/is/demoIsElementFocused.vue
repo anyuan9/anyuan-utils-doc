@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { isElementFocused } from "@anyuan/utils";
 
-// isElementFocused 测试数据
 const isElementFocusedRes = ref<Array<{ label: string; value: any }>>([]);
-isElementFocusedRes.value = [
-  { label: "焦点元素", value: document.createElement("input") },
-  { label: "非焦点元素", value: document.createElement("div") }
-];
+
+onMounted(() => {
+  if (typeof document !== "undefined") {
+    isElementFocusedRes.value = [
+      { label: "焦点元素", value: document.createElement("input") },
+      { label: "非焦点元素", value: document.createElement("div") }
+    ];
+  }
+});
 </script>
 
 <template>

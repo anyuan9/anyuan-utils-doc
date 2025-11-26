@@ -31,7 +31,7 @@ gcj02ToWgs84Res.value = [
         </span>
       </div>
       <n-gradient-text type="info">
-        // {{ JSON.stringify(gcj02ToWgs84(item.lng, item.lat)) }}
+        // {{ gcj02ToWgs84(item.lng, item.lat) }}
       </n-gradient-text>
     </div>
   </naive-theme>

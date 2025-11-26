@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { isElementOrDescendantFocused } from "@anyuan/utils";
 
-// isElementOrDescendantFocused 测试数据
-const isElementOrDescendantFocusedRes = ref<
-  Array<{ label: string; value: any }>
->([]);
-isElementOrDescendantFocusedRes.value = [
-  { label: "包含焦点元素的父元素", value: document.createElement("div") },
-  { label: "不包含焦点元素的父元素", value: document.createElement("div") }
-];
+const isElementOrDescendantFocusedRes = ref<Array<{ label: string; value: any }>>([]);
+
+onMounted(() => {
+  if (typeof document !== "undefined") {
+    isElementOrDescendantFocusedRes.value = [
+      { label: "包含焦点元素的父元素", value: document.createElement("div") },
+      { label: "不包含焦点元素的父元素", value: document.createElement("div") }
+    ];
+  }
+});
 </script>
 
 <template>

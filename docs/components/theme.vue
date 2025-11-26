@@ -2,7 +2,7 @@
 import { useData } from "vitepress";
 import { darkTheme } from "naive-ui";
 import { ref, watch, onMounted } from "vue";
-import { useDark, wait } from "@anyuan/utils";
+import { useDark, wait, isBrowser } from "@anyuan/utils";
 
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -18,7 +18,7 @@ onMounted(() => {
   dark.value = isDark.value;
   show.value = true;
   wait(time).then(() => {
-    if (window.location.hash) {
+    if (isBrowser() && window.location.hash) {
       const decodedHash = decodeURIComponent(window.location.hash);
       const targetElement = document.querySelector(decodedHash);
       if (targetElement) {

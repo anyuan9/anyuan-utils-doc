@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { isWindow } from "@anyuan/utils";
 
-// isWindow 测试数据
 const isWindowRes = ref<Array<{ label: string; value: any }>>([]);
-isWindowRes.value = [
-  { label: "window对象", value: window },
-  { label: "document对象", value: document },
-  { label: "普通对象", value: {} },
-  { label: "null", value: null }
-];
+
+onMounted(() => {
+  const hasWindow = typeof window !== "undefined";
+  const hasDocument = typeof document !== "undefined";
+  isWindowRes.value = [
+    { label: "window对象", value: hasWindow ? window : null },
+    { label: "document对象", value: hasDocument ? document : null },
+    { label: "普通对象", value: {} },
+    { label: "null", value: null }
+  ];
+});
 </script>
 
 <template>
