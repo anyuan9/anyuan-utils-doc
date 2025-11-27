@@ -108,6 +108,14 @@ export default defineConfig({
             text: "快速开始",
             link: "/guide/guide"
           }
+          // {
+          //   text: "发布NPM包",
+          //   link: "/guide/npmPackages"
+          // },
+          // {
+          //   text: "部署GitHub Pages",
+          //   link: "/guide/githubPages"
+          // }
         ]
       },
       {

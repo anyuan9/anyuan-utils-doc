@@ -4,8 +4,13 @@ useAddNumInOutlineLabel(4)
 
 import demoWgs84ToGcj02 from './demoWgs84ToGcj02.vue'
 import demoGcj02ToWgs84 from './demoGcj02ToWgs84.vue'
-import demoBd09ToGcj02 from './demoBd09ToGcj02.vue'
 import demoGcj02ToBd09 from './demoGcj02ToBd09.vue'
+import demoBd09ToGcj02 from './demoBd09ToGcj02.vue'
+import demoWgs84ToBd09 from './demoWgs84ToBd09.vue'
+import demoBd09ToWgs84 from './demoBd09ToWgs84.vue'
+import demoWgs84ToWebMercator from './demoWgs84ToWebMercator.vue'
+import demoWebMercatorToWgs84 from './demoWebMercatorToWgs84.vue'
+import demoTransformCoord from './demoTransformCoord.vue'
 </script>
 
 ::: tip 支持任意 `JavaScript` 环境或框架
@@ -19,11 +24,11 @@ import demoGcj02ToBd09 from './demoGcj02ToBd09.vue'
 
 ## wgs84ToGcj02
 
-WGS84坐标系转火星坐标系
+WGS84(EPSG:4326)坐标系 转 GCJ02(火星坐标系)
 
 <div class="code-border">
 
-#### <divider-base /> {#base3}
+#### <divider-base /> {#base1}
 
 <demoWgs84ToGcj02 />
 
@@ -35,18 +40,18 @@ WGS84坐标系转火星坐标系
 
 </details>
 
-#### <divider-param /> {#param3}
+#### <divider-param /> {#param1}
 
-| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
-| ------------ | -------- | -------- | -------- | ---------- |
-| `lng`        | 是       | 经度     | `number` |            |
-| `lat`        | 是       | 纬度     | `number` |            |
+| **参数属性** | **必传** | **说明**  | **类型** | **默认值** |
+| ------------ | -------- | --------- | -------- | ---------- |
+| `lng`        | 是       | WGS84经度 | `number` |            |
+| `lat`        | 是       | WGS84纬度 | `number` |            |
 
-#### <divider-return /> {#return3}
+#### <divider-return /> {#return1}
 
-| **名称**        | **说明**           |
-| --------------- | ------------------ |
-| `Array<number>` | 经、纬度组成的数组 |
+| **名称**        | **说明**                       |
+| --------------- | ------------------------------ |
+| `Array<number>` | GCJ02坐标经度、纬度 [lng, lat] |
 
 ::: info 相关信息
 对于中国境外的坐标，此函数会直接返回原始坐标而不进行转换
@@ -56,11 +61,11 @@ WGS84坐标系转火星坐标系
 
 ## gcj02ToWgs84
 
-火星坐标系转WGS84坐标系
+GCJ02(火星坐标系) 转 WGS84(EPSG:4326)坐标系
 
 <div class="code-border">
 
-#### <divider-base /> {#base4}
+#### <divider-base /> {#base2}
 
 <demoGcj02ToWgs84 />
 
@@ -72,61 +77,28 @@ WGS84坐标系转火星坐标系
 
 </details>
 
-#### <divider-param /> {#param4}
+#### <divider-param /> {#param2}
 
-| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
-| ------------ | -------- | -------- | -------- | ---------- |
-| `lng`        | 是       | 经度     | `number` |            |
-| `lat`        | 是       | 纬度     | `number` |            |
+| **参数属性** | **必传** | **说明**  | **类型** | **默认值** |
+| ------------ | -------- | --------- | -------- | ---------- |
+| `lng`        | 是       | GCJ02经度 | `number` |            |
+| `lat`        | 是       | GCJ02纬度 | `number` |            |
 
-#### <divider-return /> {#return4}
+#### <divider-return /> {#return2}
 
-| **名称**        | **说明**           |
-| --------------- | ------------------ |
-| `Array<number>` | 经、纬度组成的数组 |
-
-</div>
-
-## bd09ToGcj02
-
-百度坐标系转火星坐标系
-
-<div class="code-border">
-
-#### <divider-base /> {#base1}
-
-<demoBd09ToGcj02 />
-
-<details>
-
-<summary>查看代码</summary>
-
-<<< @/utils/map/demoBd09ToGcj02.vue
-
-</details>
-
-#### <divider-param /> {#param1}
-
-| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
-| ------------ | -------- | -------- | -------- | ---------- |
-| `lng`        | 是       | 经度     | `number` |            |
-| `lat`        | 是       | 纬度     | `number` |            |
-
-#### <divider-return /> {#return1}
-
-| **名称**        | **说明**           |
-| --------------- | ------------------ |
-| `Array<number>` | 经、纬度组成的数组 |
+| **名称**        | **说明**                       |
+| --------------- | ------------------------------ |
+| `Array<number>` | WGS84坐标经度、纬度 [lng, lat] |
 
 </div>
 
 ## gcj02ToBd09
 
-火星坐标系转百度坐标系
+GCJ02(火星坐标系)转BD09(百度坐标系)
 
 <div class="code-border">
 
-#### <divider-base /> {#base2}
+#### <divider-base /> {#base3}
 
 <demoGcj02ToBd09 />
 
@@ -138,17 +110,217 @@ WGS84坐标系转火星坐标系
 
 </details>
 
-#### <divider-param /> {#param2}
+#### <divider-param /> {#param3}
+
+| **参数属性** | **必传** | **说明**  | **类型** | **默认值** |
+| ------------ | -------- | --------- | -------- | ---------- |
+| `lng`        | 是       | GCJ02经度 | `number` |            |
+| `lat`        | 是       | GCJ02纬度 | `number` |            |
+
+#### <divider-return /> {#return3}
+
+| **名称**        | **说明**                      |
+| --------------- | ----------------------------- |
+| `Array<number>` | BD09坐标经度、纬度 [lng, lat] |
+
+</div>
+
+## bd09ToGcj02
+
+BD09(百度坐标系)转GCJ02(火星坐标系)
+
+<div class="code-border">
+
+#### <divider-base /> {#base4}
+
+<demoBd09ToGcj02 />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/map/demoBd09ToGcj02.vue
+
+</details>
+
+#### <divider-param /> {#param4}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
-| `lng`        | 是       | 经度     | `number` |            |
-| `lat`        | 是       | 纬度     | `number` |            |
+| `lng`        | 是       | BD09经度 | `number` |            |
+| `lat`        | 是       | BD09纬度 | `number` |            |
 
-#### <divider-return /> {#return2}
+#### <divider-return /> {#return4}
 
-| **名称**        | **说明**           |
-| --------------- | ------------------ |
-| `Array<number>` | 经、纬度组成的数组 |
+| **名称**        | **说明**                       |
+| --------------- | ------------------------------ |
+| `Array<number>` | GCJ02坐标经度、纬度 [lng, lat] |
+
+</div>
+
+## wgs84ToBd09
+
+WGS84(EPSG:4326)坐标系 转 BD09(百度坐标系)
+
+<div class="code-border">
+
+#### <divider-base /> {#base5}
+
+<demoWgs84ToBd09 />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/map/demoWgs84ToBd09.vue
+
+</details>
+
+#### <divider-param /> {#param5}
+
+| **参数属性** | **必传** | **说明**  | **类型** | **默认值** |
+| ------------ | -------- | --------- | -------- | ---------- |
+| `lng`        | 是       | WGS84经度 | `number` |            |
+| `lat`        | 是       | WGS84纬度 | `number` |            |
+
+#### <divider-return /> {#return5}
+
+| **名称**        | **说明**                      |
+| --------------- | ----------------------------- |
+| `Array<number>` | BD09坐标经度、纬度 [lng, lat] |
+
+</div>
+
+## bd09ToWgs84
+
+BD09(百度坐标系) 转 WGS84(EPSG:4326)坐标系
+
+<div class="code-border">
+
+#### <divider-base /> {#base6}
+
+<demoBd09ToWgs84 />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/map/demoBd09ToWgs84.vue
+
+</details>
+
+#### <divider-param /> {#param6}
+
+| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
+| ------------ | -------- | -------- | -------- | ---------- |
+| `lng`        | 是       | BD09经度 | `number` |            |
+| `lat`        | 是       | BD09纬度 | `number` |            |
+
+#### <divider-return /> {#return6}
+
+| **名称**        | **说明**                       |
+| --------------- | ------------------------------ |
+| `Array<number>` | WGS84坐标经度、纬度 [lng, lat] |
+
+</div>
+
+## wgs84ToWebMercator
+
+WGS84(EPSG:4326)坐标系 转 WebMercator(EPSG:3857)坐标系
+
+<div class="code-border">
+
+#### <divider-base /> {#base7}
+
+<demoWgs84ToWebMercator />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/map/demoWgs84ToWebMercator.vue
+
+</details>
+
+#### <divider-param /> {#param7}
+
+| **参数属性** | **必传** | **说明**  | **类型** | **默认值** |
+| ------------ | -------- | --------- | -------- | ---------- |
+| `lng`        | 是       | WGS84经度 | `number` |            |
+| `lat`        | 是       | WGS84纬度 | `number` |            |
+
+#### <divider-return /> {#return7}
+
+| **名称**        | **说明**                             |
+| --------------- | ------------------------------------ |
+| `Array<number>` | WebMercator坐标经度、纬度 [lng, lat] |
+
+</div>
+
+## webMercatorToWgs84
+
+WebMercator(EPSG:3857)坐标系 转 WGS84(EPSG:4326)坐标系
+
+<div class="code-border">
+
+#### <divider-base /> {#base8}
+
+<demoWebMercatorToWgs84 />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/map/demoWebMercatorToWgs84.vue
+
+</details>
+
+#### <divider-param /> {#param8}
+
+| **参数属性** | **必传** | **说明**        | **类型** | **默认值** |
+| ------------ | -------- | --------------- | -------- | ---------- |
+| `lng`        | 是       | WebMercator经度 | `number` |            |
+| `lat`        | 是       | WebMercator纬度 | `number` |            |
+
+#### <divider-return /> {#return8}
+
+| **名称**        | **说明**                       |
+| --------------- | ------------------------------ |
+| `Array<number>` | WGS84坐标经度、纬度 [lng, lat] |
+
+</div>
+
+## transformCoord
+
+坐标转换
+
+<div class="code-border">
+
+#### <divider-base /> {#base9}
+
+<demoTransformCoord />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/map/demoTransformCoord.vue
+
+</details>
+
+#### <divider-param /> {#param9}
+
+| **参数属性** | **必传** | **说明**                                            | **类型**           | **默认值** |
+| ------------ | -------- | --------------------------------------------------- | ------------------ | ---------- |
+| `lng`        | 是       | 经度                                                | `number`           |            |
+| `lat`        | 是       | 纬度                                                | `number`           |            |
+| `from`       | 是       | 来源坐标系, 可选值: WGS84, GCJ02, BD09, WebMercator | `CoordinateSystem` |            |
+| `to`         | 是       | 目标坐标系, 可选值: WGS84, GCJ02, BD09, WebMercator | `CoordinateSystem` |            |
+
+#### <divider-return /> {#return9}
+
+| **名称**        | **说明**                            |
+| --------------- | ----------------------------------- |
+| `Array<number>` | 目标坐标系坐标经度、纬度 [lng, lat] |
 
 </div>

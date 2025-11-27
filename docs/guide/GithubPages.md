@@ -19,11 +19,11 @@ docs/                   # 文档根目录
     README.txt          # 改用 txt（否则 vitepress 会生成对应的 READMD.html  ）
 ```
 
-## Github Pages 简介
+## 使用 GitHub Actions 自动部署
+
+### Github Pages 简介
 
 `GitHub Pages` 是一项静态站点托管服务，它直接从 GitHub 上的仓库获取 HTML、CSS 和 JavaScript 文件，（可选）通过构建过程运行文件，然后发布网站。
-
-## 使用 GitHub Actions 自动部署
 
 将 VitePress 项目部署到 GitHub Pages 非常简单，特别是利用 GitHub Actions 可以实现自动化部署。你只需要推送代码到 GitHub，它就会自动构建并部署。
 
@@ -66,6 +66,8 @@ export default {
 ```bash
 npm run docs:build
 ```
+
+容易报错：ReferenceError: window is not defined 或者 ReferenceError: document is not defined
 
 ### 第二步：在 GitHub 上创建仓库并推送代码
 
@@ -163,3 +165,56 @@ jobs:
 5. 在左侧边栏中，找到 "Pages" 选项。6.在 "Source" 下拉菜单中，选择 "GitHub Actions"。
 
 现在，你的站点已经开始部署了！稍等几分钟，访问 `https://<USERNAME>.github.io/<REPO>/` 即可查看你的 VitePress 站点。
+
+## 使用Netlify部署
+
+### Netlify介绍
+
+Netlify 是一个提供静态资源网络托管的综合平台，提供CI服务，能够将托管 GitHub，GitLab 等网站上的 Jekyll，Hexo，Hugo 等代码自动编译并生成静态网站。
+
+Netlify 有如下的功能:
+
+- 能够托管服务，免费 CDN
+- 能够绑定自定义域名
+- 能够启用免费的TLS证书，启用HTTPS
+- 支持自动构建
+- 提供 Webhooks 和 API
+
+### 使用 Netlify
+
+首先使用你的 GitHub 账号登陆 [Netlify](https://app.netlify.com/)，登陆后进入空间管理中心，，点击New site from git按钮开始部署你的博客：
+
+然后根据自己的托管平台，可以选择GitHub、GitLab或者BitBucket（这里以 GitHub 为例）：
+
+点击GitHub之后会弹出一个让你授权的窗口，给 Netlify 授权后，就会自动读取你 GitHub 的仓库：
+
+选择仓库后，Netlify 会自动识别到 hexo，并填入相关信息，这时候只要无脑点击 Deploy site就可以：
+
+稍等一段时间就可以看到你的博客已经部署成功，并且给你分配了一个二级域名
+
+上面流程走完，其实已经可以自动化部署，只要 push 了代码，就会自动更新。
+
+参考：
+
+- [Netlify 官方文档](https://docs.netlify.com/)
+- [手把手教你使用Netlify部署博客及部署自动化](https://zhuanlan.zhihu.com/p/55252024)
+
+## FAQ
+
+1. 打包时报错 ReferenceError: window is not defined 或者 ReferenceError: document is not defined
+
+原因与本质：
+
+- VitePress 构建静态站点时会先进行服务端渲染（SSR），在 Node 环境中运行你的代码。此时 window / document 不存在。
+- 你的工具库里有对浏览器 API 的直接访问，或者本应做环境判断的地方判断失败，结果在 SSR 阶段继续执行到了 window / document ，从而报错。
+
+如何解决：
+
+- 统一使用环境判断：在需要使用 window / document / navigator 等浏览器 API 的地方，统一使用 if (!isBrowser()) 。
+- 将所有浏览器相关逻辑放在函数内部且按需执行，不要在模块顶层做 DOM 操作或挂事件。
+- 针对 VitePress 页面，包含浏览器 API 的组件或示例用 <ClientOnly>...</ClientOnly> 包裹，确保只在客户端渲染。
+- 在主题增强里也可防御：在 .vitepress/theme/index.ts 的 enhanceApp 中，先判断 import.meta.env.SSR 再做任何 DOM 相关初始化。
+
+参考：
+
+- [VuePress在build打包时window document is not defined](https://segmentfault.com/a/1190000039368216)
