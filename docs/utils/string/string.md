@@ -12,6 +12,7 @@ import demoStrCapitalize from './demoStrCapitalize.vue'
 import demoStrUniq from './demoStrUniq.vue'
 import demoStrSplitWithUnit from './demoStrSplitWithUnit.vue'
 import demoStrCalcWithUnit from './demoStrCalcWithUnit.vue'
+import demoStrRegExpEscape from './demoStrRegExpEscape.vue'
 import demoStrHideSensitive from './demoStrHideSensitive.vue'
 import demoStrHasCNChars from './demoStrHasCNChars.vue'
 import demoStrCamelize from './demoStrCamelize.vue'
@@ -292,13 +293,45 @@ mode 参数说明：
 
 </div>
 
+## strRegExpEscape
+
+将字符串中的特殊字符进行转义，使其可以安全地用作正则表达式中的普通文本匹配
+
+<div class="code-border">
+
+#### <divider-base /> {#base10}
+
+<demoStrRegExpEscape />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/string/demoStrRegExpEscape.vue
+
+</details>
+
+#### <divider-param /> {#param10}
+
+| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
+| ------------ | -------- | -------- | -------- | ---------- |
+| `str`        | 是       | 需要转义的字符串 | `string` |            |
+
+#### <divider-return /> {#return10}
+
+| **名称** | **说明** |
+| -------- | -------- |
+| `string` | 转义后的字符串 |
+
+</div>
+
 ## strHideSensitive
 
 使用指定符号对指定的文字进行隐藏，默认使用 `*` 符号
 
 <div class="code-border">
 
-#### <divider-base /> {#base10}
+#### <divider-base /> {#base11}
 
 <demoStrHideSensitive />
 
@@ -310,7 +343,7 @@ mode 参数说明：
 
 </details>
 
-#### <divider-param /> {#param10}
+#### <divider-param /> {#param11}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -333,7 +366,7 @@ StrHideTextIndex 接口：
 
 <div class="code-border">
 
-#### <divider-base /> {#base11}
+#### <divider-base /> {#base12}
 
 <demoStrHasCNChars />
 
@@ -345,7 +378,7 @@ StrHideTextIndex 接口：
 
 </details>
 
-#### <divider-param /> {#param11}
+#### <divider-param /> {#param12}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -369,7 +402,7 @@ StrHasCNCharsOptions 配置项：
 
 <div class="code-border">
 
-#### <divider-base /> {#base12}
+#### <divider-base /> {#base13}
 
 <demoStrCamelize />
 
@@ -381,7 +414,7 @@ StrHasCNCharsOptions 配置项：
 
 </details>
 
-#### <divider-param /> {#param12}
+#### <divider-param /> {#param13}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -395,7 +428,7 @@ StrHasCNCharsOptions 配置项：
 
 <div class="code-border">
 
-#### <divider-base /> {#base13}
+#### <divider-base /> {#base14}
 
 <demoStrHyphenate />
 
@@ -407,7 +440,7 @@ StrHasCNCharsOptions 配置项：
 
 </details>
 
-#### <divider-param /> {#param13}
+#### <divider-param /> {#param14}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -421,7 +454,7 @@ StrHasCNCharsOptions 配置项：
 
 <div class="code-border">
 
-#### <divider-base /> {#base14}
+#### <divider-base /> {#base15}
 
 <demoStrCamelCase />
 
@@ -433,7 +466,7 @@ StrHasCNCharsOptions 配置项：
 
 </details>
 
-#### <divider-param /> {#param14}
+#### <divider-param /> {#param15}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |

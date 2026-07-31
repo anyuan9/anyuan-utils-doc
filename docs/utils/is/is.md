@@ -7,6 +7,7 @@ import demoIsBoolean from './demoIsBoolean.vue';
 import demoIsNumber from './demoIsNumber.vue';
 import demoIsValidNumber from './demoIsValidNumber.vue';
 import demoIsInteger from './demoIsInteger.vue';
+import demoIsNaturalNumber from './demoIsNaturalNumber.vue';
 import demoIsFloat from './demoIsFloat.vue';
 import demoIsString from './demoIsString.vue';
 import demoIsUndefined from './demoIsUndefined.vue';
@@ -45,6 +46,8 @@ import demoIsElementInViewport from './demoIsElementInViewport.vue';
 import demoIsElementFocused from './demoIsElementFocused.vue';
 import demoIsElementOrDescendantFocused from './demoIsElementOrDescendantFocused.vue';
 import demoIsInChina from './demoIsInChina.vue';
+import demoIsInWgs84 from './demoIsInWgs84.vue';
+import demoIsWebMercator from './demoIsWebMercator.vue';
 </script>
 
 ::: tip 支持任意 `JavaScript` 环境或框架
@@ -239,13 +242,45 @@ import demoIsInChina from './demoIsInChina.vue';
 
 </div>
 
+## isNaturalNumber
+
+判断是否是自然数 (非负整数：0, 1, 2, 3, ...)
+
+<div class="code-border">
+
+#### <divider-base /> {#base6}
+
+<demoIsNaturalNumber />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/is/demoIsNaturalNumber.vue
+
+</details>
+
+#### <divider-param /> {#param6}
+
+| **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
+| ------------ | -------- | ------------ | -------- | ---------- |
+| `val`        | 是       | 需要判断的值 | `any`    |            |
+
+#### <divider-return /> {#return6}
+
+| **名称**  | **说明**                          |
+| --------- | --------------------------------- |
+| `boolean` | true（是自然数）、false（不是自然数） |
+
+</div>
+
 ## isFloat
 
 判断是否是浮点数类型
 
 <div class="code-border">
 
-#### <divider-base /> {#base6}
+#### <divider-base /> {#base7}
 
 <demoIsFloat />
 
@@ -257,13 +292,13 @@ import demoIsInChina from './demoIsInChina.vue';
 
 </details>
 
-#### <divider-param /> {#param6}
+#### <divider-param /> {#param7}
 
 | **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
 | ------------ | -------- | ------------ | -------- | ---------- |
 | `val`        | 是       | 需要判断的值 | `any`    |            |
 
-#### <divider-return /> {#return6}
+#### <divider-return /> {#return7}
 
 | **名称**  | **说明**                              |
 | --------- | ------------------------------------- |
@@ -277,7 +312,7 @@ import demoIsInChina from './demoIsInChina.vue';
 
 <div class="code-border">
 
-#### <divider-base /> {#base7}
+#### <divider-base /> {#base8}
 
 <demoIsString />
 
@@ -289,13 +324,13 @@ import demoIsInChina from './demoIsInChina.vue';
 
 </details>
 
-#### <divider-param /> {#param7}
+#### <divider-param /> {#param8}
 
 | **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
 | ------------ | -------- | ------------ | -------- | ---------- |
 | `val`        | 是       | 需要判断的值 | `any`    |            |
 
-#### <divider-return /> {#return7}
+#### <divider-return /> {#return8}
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
@@ -309,7 +344,7 @@ import demoIsInChina from './demoIsInChina.vue';
 
 <div class="code-border">
 
-#### <divider-base /> {#base8}
+#### <divider-base /> {#base9}
 
 <demoIsUndefined />
 
@@ -321,13 +356,13 @@ import demoIsInChina from './demoIsInChina.vue';
 
 </details>
 
-#### <divider-param /> {#param8}
+#### <divider-param /> {#param9}
 
 | **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
 | ------------ | -------- | ------------ | -------- | ---------- |
 | `val`        | 是       | 需要判断的值 | `any`    |            |
 
-#### <divider-return /> {#return8}
+#### <divider-return /> {#return9}
 
 | **名称**  | **说明**                                            |
 | --------- | --------------------------------------------------- |
@@ -341,7 +376,7 @@ import demoIsInChina from './demoIsInChina.vue';
 
 <div class="code-border">
 
-#### <divider-base /> {#base9}
+#### <divider-base /> {#base10}
 
 <demoIsNull />
 
@@ -353,13 +388,13 @@ import demoIsInChina from './demoIsInChina.vue';
 
 </details>
 
-#### <divider-param /> {#param9}
+#### <divider-param /> {#param10}
 
 | **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
 | ------------ | -------- | ------------ | -------- | ---------- |
 | `val`        | 是       | 需要判断的值 | `any`    |            |
 
-#### <divider-return /> {#return9}
+#### <divider-return /> {#return10}
 
 | **名称**  | **说明**                                  |
 | --------- | ----------------------------------------- |
@@ -1426,13 +1461,77 @@ import demoIsInChina from './demoIsInChina.vue';
 
 </div>
 
+## isWgs84
+
+判断坐标是否是 wgs84 坐标范围
+
+<div class="code-border">
+
+#### <divider-base /> {#base43}
+
+<demoIsInWgs84 />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/is/demoIsInWgs84.vue
+
+</details>
+
+#### <divider-param /> {#param43}
+
+| **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
+| ------------ | -------- | ------------ | -------- | ---------- |
+| `val`        | 是       | 需要判断的值 | `any`    |            |
+
+#### <divider-return /> {#return43}
+
+| **名称**  | **说明**                                  |
+| --------- | ----------------------------------------- |
+| `boolean` | true（是 wgs84 坐标范围）、false（不是 wgs84 坐标范围） |
+
+</div>
+
+## isWebMercator
+
+判断坐标是否是 Web Mercator 坐标范围
+
+<div class="code-border">
+
+#### <divider-base /> {#base44}
+
+<demoIsWebMercator />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/is/demoIsWebMercator.vue
+
+</details>
+
+#### <divider-param /> {#param44}
+
+| **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
+| ------------ | -------- | ------------ | -------- | ---------- |
+| `val`        | 是       | 需要判断的值 | `any`    |            |
+
+#### <divider-return /> {#return44}
+
+| **名称**  | **说明**                                  |
+| --------- | ----------------------------------------- |
+| `boolean` | true（是Web Mercator 坐标范围）、false（不是Web Mercator 坐标范围） |
+
+</div>
+
 ## isInChina
 
 判断坐标是否在中国境内（粗略判断）
 
 <div class="code-border">
 
-#### <divider-base /> {#base43}
+#### <divider-base /> {#base45}
 
 <demoIsInChina />
 
@@ -1444,13 +1543,13 @@ import demoIsInChina from './demoIsInChina.vue';
 
 </details>
 
-#### <divider-param /> {#param43}
+#### <divider-param /> {#param45}
 
 | **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
 | ------------ | -------- | ------------ | -------- | ---------- |
 | `val`        | 是       | 需要判断的值 | `any`    |            |
 
-#### <divider-return /> {#return43}
+#### <divider-return /> {#return45}
 
 | **名称**  | **说明**                                  |
 | --------- | ----------------------------------------- |

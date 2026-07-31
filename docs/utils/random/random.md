@@ -12,9 +12,10 @@ import demoRandomColor from './demoRandomColor.vue'
 import demoRandomGradient from './demoRandomGradient.vue'
 import demoRandomIP from './demoRandomIP.vue'
 import demoRandomMAC from './demoRandomMAC.vue'
-import demoRandomUUID from './demoRandomUUID.vue'
 import demoRandomTelePhone from './demoRandomTelePhone.vue'
 import demoRandomMobilePhone from './demoRandomMobilePhone.vue'
+import demoRandomUUID from './demoRandomUUID.vue'
+import demoRandomID from './demoRandomID.vue'
 </script>
 
 ::: tip 支持任意 `JavaScript` 环境或框架
@@ -298,37 +299,13 @@ GradientOptions 配置项：
 
 </div>
 
-## randomUUID
-
-生成随机UUID（版本4）
-
-<div class="code-border">
-
-#### <divider-base /> {#base11}
-
-<demoRandomUUID />
-
-<details>
-
-<summary>查看代码</summary>
-
-<<< @/utils/random/demoRandomUUID.vue
-
-</details>
-
-#### <divider-return /> {#return11}
-
-随机生成的UUID，格式为 `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
-
-</div>
-
 ## randomTelePhone
 
 生成随机的中国大陆电话号码
 
 <div class="code-border">
 
-#### <divider-base /> {#base12}
+#### <divider-base /> {#base11}
 
 <demoRandomTelePhone />
 
@@ -340,7 +317,7 @@ GradientOptions 配置项：
 
 </details>
 
-#### <divider-return /> {#return12}
+#### <divider-return /> {#return11}
 
 随机生成的电话号码，格式为 `区号-电话号码`
 
@@ -352,7 +329,7 @@ GradientOptions 配置项：
 
 <div class="code-border">
 
-#### <divider-base /> {#base13}
+#### <divider-base /> {#base12}
 
 <demoRandomMobilePhone />
 
@@ -364,8 +341,56 @@ GradientOptions 配置项：
 
 </details>
 
-#### <divider-return /> {#return13}
+#### <divider-return /> {#return12}
 
 随机生成的11位手机号码
+
+</div>
+
+## randomUUID
+
+生成随机UUID（版本4）
+
+<div class="code-border">
+
+#### <divider-base /> {#base13}
+
+<demoRandomUUID />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/random/demoRandomUUID.vue
+
+</details>
+
+#### <divider-return /> {#return13}
+
+随机生成的UUID，格式为 `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
+
+</div>
+
+## randomID
+
+生成随机ID
+
+<div class="code-border">
+
+#### <divider-base /> {#base14}
+
+<demoRandomID />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/random/demoRandomID.vue
+
+</details>
+
+#### <divider-return /> {#return14}
+
+随机生成的ID
 
 </div>

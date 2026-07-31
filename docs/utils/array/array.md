@@ -4,6 +4,7 @@ useAddNumInOutlineLabel(19)
 
 import demoToArray from './demoToArray.vue'
 import demoArrayFrom from './demoArrayFrom.vue'
+import demoArrayPick from './demoArrayPick.vue'
 import demoArrayFlat from './demoArrayFlat.vue'
 import demoArraySort from './demoArraySort.vue'
 import demoArrayMerge from './demoArrayMerge.vue'
@@ -93,13 +94,49 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </div>
 
+## arrayPick
+
+从数组中获取指定 key 组成的新数组，会去重也会去除不存在的值
+
+<div class="code-border">
+
+#### <divider-base /> {#base3}
+
+<demoArrayPick />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/array/demoArrayPick.vue
+
+</details>
+
+#### <divider-param /> {#param3}
+
+| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
+| ------------ | -------- | -------- | -------- | ---------- |
+| `arr`     | 是       | 数组 | `any[]` |            |
+| `key`| 是       | 指定的 key | `string` |            |
+| `options.unique `| 否       | 是否去重，默认 true 去重 | `boolean` |    true        |
+| `options.extractValues `| 否       | 是否提取 key 的值，true 返回 key 的值数组，false 返回去重后的原始数组元素 | `boolean` |    true        |
+
+
+#### <divider-return /> {#return3}
+
+| **名称** | **说明** |
+| -------- | -------- |
+| `Array` | 生成的新数组 |
+
+</div>
+
 ## arrayFlat
 
 数组扁平化
 
 <div class="code-border">
 
-#### <divider-base /> {#base3}
+#### <divider-base /> {#base4}
 
 <demoArrayFlat />
 
@@ -111,14 +148,14 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param3}
+#### <divider-param /> {#param4}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 待处理的数组 | `Nullable<Arrayable<T \| Array<T>>>` |            |
 | `depth`      | 否       | 扁平化的深度 | `number` | `1`        |
 
-#### <divider-return /> {#return3}
+#### <divider-return /> {#return4}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -132,7 +169,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base4}
+#### <divider-base /> {#base5}
 
 <demoArraySort />
 
@@ -144,14 +181,14 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param4}
+#### <divider-param /> {#param5}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 要排序的数组 | `T[]` | `[]`       |
 | `compareFn`  | 否       | 排序函数（asc升序排序，desc降序排序，自定义排序） | `((a: T, b: T) => number) \| "asc" \| "desc"` | `"asc"`     |
 
-#### <divider-return /> {#return4}
+#### <divider-return /> {#return5}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -165,7 +202,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base5}
+#### <divider-base /> {#base6}
 
 <demoArrayMerge />
 
@@ -177,13 +214,13 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param5}
+#### <divider-param /> {#param6}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `args`       | 是       | 多个数组 | `T[]` |            |
 
-#### <divider-return /> {#return5}
+#### <divider-return /> {#return6}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -197,7 +234,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base6}
+#### <divider-base /> {#base7}
 
 <demoArrayPartition />
 
@@ -209,14 +246,14 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param6}
+#### <divider-param /> {#param7}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 待分组的数组 | `T[]` |            |
 | `filters`    | 是       | 过滤函数数组 | `Array<(item: T, index: number, array: T[]) => boolean>` |            |
 
-#### <divider-return /> {#return6}
+#### <divider-return /> {#return7}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -230,7 +267,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base7}
+#### <divider-base /> {#base8}
 
 <demoArrayIndexOf />
 
@@ -242,14 +279,14 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param7}
+#### <divider-param /> {#param8}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 数组 | `T[]` |            |
 | `compare`    | 是       | 比较函数，自定义比对函数、'min'， 'max'、数组元素等 | `((prevIndex: number, current: T, index: number, arr: T[]) => boolean) \| T \| "min" \| "max"` |            |
 
-#### <divider-return /> {#return7}
+#### <divider-return /> {#return8}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -263,7 +300,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base8}
+#### <divider-base /> {#base9}
 
 <demoArrayCompact />
 
@@ -275,13 +312,13 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param8}
+#### <divider-param /> {#param9}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 待处理的数组 | `T[]` |            |
 
-#### <divider-return /> {#return8}
+#### <divider-return /> {#return9}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -295,7 +332,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base9}
+#### <divider-base /> {#base10}
 
 <demoArrayUniq />
 
@@ -307,13 +344,13 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param9}
+#### <divider-param /> {#param10}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 待去重的数组 | `T[]` | `[]`       |
 
-#### <divider-return /> {#return9}
+#### <divider-return /> {#return10}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -327,7 +364,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base10}
+#### <divider-base /> {#base11}
 
 <demoArrayUniqBy />
 
@@ -339,14 +376,14 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param10}
+#### <divider-param /> {#param11}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 待去重的数组 | `T[]` |            |
 | `equalFn`    | 是       | 判断元素是否在结果数组中出现 | `(currentItem: T, accumulatedItem: T) => boolean` |            |
 
-#### <divider-return /> {#return10}
+#### <divider-return /> {#return11}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -360,7 +397,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base11}
+#### <divider-base /> {#base12}
 
 <demoArrayClosest />
 
@@ -372,14 +409,14 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param11}
+#### <divider-param /> {#param12}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 数值数组 | `any[]` |            |
 | `num`        | 是       | 目标数值 | `number` |            |
 
-#### <divider-return /> {#return11}
+#### <divider-return /> {#return12}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -393,7 +430,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base12}
+#### <divider-base /> {#base13}
 
 <demoArrayShuffle />
 
@@ -405,13 +442,13 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param12}
+#### <divider-param /> {#param13}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `array`      | 是       | 待打乱的数组 | `any[]` |            |
 
-#### <divider-return /> {#return12}
+#### <divider-return /> {#return13}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -425,7 +462,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base13}
+#### <divider-base /> {#base14}
 
 <demoArrayContainsAll />
 
@@ -437,7 +474,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param13}
+#### <divider-param /> {#param14}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -445,7 +482,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 | `childArray` | 是       | 子体数组 | `T[]` |            |
 | `compareFn`  | 否       | 比较函数 | `(a: T, b: T) => boolean` | `(a, b) => a === b` |
 
-#### <divider-return /> {#return13}
+#### <divider-return /> {#return14}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -459,7 +496,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base14}
+#### <divider-base /> {#base15}
 
 <demoArrayIntersection />
 
@@ -468,39 +505,6 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 <summary>查看代码</summary>
 
 <<< @/utils/array/demoArrayIntersection.vue
-
-</details>
-
-#### <divider-param /> {#param14}
-
-| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
-| ------------ | -------- | -------- | -------- | ---------- |
-| `arr1`       | 是       | 第一个数组 | `T[]` | `[]`       |
-| `arr2`       | 是       | 第二个数组 | `T[]` | `[]`       |
-
-#### <divider-return /> {#return14}
-
-| **名称** | **说明** |
-| -------- | -------- |
-| `Array` | 交集数组 |
-
-</div>
-
-## arrayUnion
-
-两个数组的并集，即在给定数组内出现的所有元素
-
-<div class="code-border">
-
-#### <divider-base /> {#base15}
-
-<demoArrayUnion />
-
-<details>
-
-<summary>查看代码</summary>
-
-<<< @/utils/array/demoArrayUnion.vue
 
 </details>
 
@@ -515,25 +519,25 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 | **名称** | **说明** |
 | -------- | -------- |
-| `Array` | 并集数组 |
+| `Array` | 交集数组 |
 
 </div>
 
-## arrayDifference
+## arrayUnion
 
-两个数组的差集，即数组arr1有，arr2所没有的
+两个数组的并集，即在给定数组内出现的所有元素
 
 <div class="code-border">
 
 #### <divider-base /> {#base16}
 
-<demoArrayDifference />
+<demoArrayUnion />
 
 <details>
 
 <summary>查看代码</summary>
 
-<<< @/utils/array/demoArrayDifference.vue
+<<< @/utils/array/demoArrayUnion.vue
 
 </details>
 
@@ -548,25 +552,25 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 | **名称** | **说明** |
 | -------- | -------- |
-| `Array` | 差集数组 |
+| `Array` | 并集数组 |
 
 </div>
 
-## arrayXor
+## arrayDifference
 
-两个数组的补集，即两个数组各自没有的集合
+两个数组的差集，即数组arr1有，arr2所没有的
 
 <div class="code-border">
 
 #### <divider-base /> {#base17}
 
-<demoArrayXor />
+<demoArrayDifference />
 
 <details>
 
 <summary>查看代码</summary>
 
-<<< @/utils/array/demoArrayXor.vue
+<<< @/utils/array/demoArrayDifference.vue
 
 </details>
 
@@ -581,6 +585,39 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 | **名称** | **说明** |
 | -------- | -------- |
+| `Array` | 差集数组 |
+
+</div>
+
+## arrayXor
+
+两个数组的补集，即两个数组各自没有的集合
+
+<div class="code-border">
+
+#### <divider-base /> {#base18}
+
+<demoArrayXor />
+
+<details>
+
+<summary>查看代码</summary>
+
+<<< @/utils/array/demoArrayXor.vue
+
+</details>
+
+#### <divider-param /> {#param18}
+
+| **参数属性** | **必传** | **说明** | **类型** | **默认值** |
+| ------------ | -------- | -------- | -------- | ---------- |
+| `arr1`       | 是       | 第一个数组 | `T[]` | `[]`       |
+| `arr2`       | 是       | 第二个数组 | `T[]` | `[]`       |
+
+#### <divider-return /> {#return18}
+
+| **名称** | **说明** |
+| -------- | -------- |
 | `Array` | 补集数组 |
 
 </div>
@@ -591,7 +628,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base18}
+#### <divider-base /> {#base19}
 
 <demoArrayElementSwap />
 
@@ -603,7 +640,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param18}
+#### <divider-param /> {#param19}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -611,7 +648,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 | `index1`     | 是       | 第一个位置的索引 | `number` |            |
 | `index2`     | 是       | 第二个位置的索引 | `number` |            |
 
-#### <divider-return /> {#return18}
+#### <divider-return /> {#return19}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -625,7 +662,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base19}
+#### <divider-base /> {#base20}
 
 <demoArrayElementMoveUp />
 
@@ -637,7 +674,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param19}
+#### <divider-param /> {#param20}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -645,7 +682,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 | `index`      | 是       | 数组元素下标 | `number` |            |
 | `loop`       | 否       | 是否循环套环（第一个元素上移到最后一个位置） | `boolean` | `false`    |
 
-#### <divider-return /> {#return19}
+#### <divider-return /> {#return20}
 
 | **名称** | **说明** |
 | -------- | -------- |
@@ -659,7 +696,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 <div class="code-border">
 
-#### <divider-base /> {#base20}
+#### <divider-base /> {#base21}
 
 <demoArrayElementMoveDown />
 
@@ -671,7 +708,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 
 </details>
 
-#### <divider-param /> {#param20}
+#### <divider-param /> {#param21}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
@@ -679,7 +716,7 @@ import demoArrayElementMoveDown from './demoArrayElementMoveDown.vue'
 | `index`      | 是       | 数组元素下标 | `number` |            |
 | `loop`       | 否       | 是否循环套环（最后一个元素下移到第一个位置） | `boolean` | `false`    |
 
-#### <divider-return /> {#return20}
+#### <divider-return /> {#return21}
 
 | **名称** | **说明** |
 | -------- | -------- |
