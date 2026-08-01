@@ -6,8 +6,8 @@ import { getMonthFirstDate } from "@anyuan/utils";
 const getMonthFirstDateRes = ref<Array<{ label: string; value: any }>>([]);
 getMonthFirstDateRes.value = [
   { label: "当前月份", value: new Date() },
-  { label: "指定月份", value: "2024-05-15" },
-  { label: "无效日期", value: "Invalid Date" }
+  { label: "指定月份", value: "2024-05-15" }
+  // { label: "无效日期", value: "Invalid Date" }
 ];
 </script>
 

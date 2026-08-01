@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { darken } from "@anyuan/utils";
+import { colorDarken } from "@anyuan/utils";
 
-// darken 测试数据
+// colorDarken 测试数据
 const darkenRes = ref<Array<{ label: string; value: any; level: number }>>([]);
 darkenRes.value = [
   { label: "标准8位HEX", value: "#ff000080", level: 0.8 },
@@ -25,11 +25,11 @@ darkenRes.value = [
       <div>
         <span className="font-bold">{{ item.label }}</span>
         <span className="ml-2">
-          darken("{{ item.value }}", {{ item.level }})
+          colorDarken("{{ item.value }}", {{ item.level }})
         </span>
       </div>
       <n-gradient-text type="info">
-        // {{ darken(item.value, item.level) }}
+        // {{ colorDarken(item.value, item.level) }}
       </n-gradient-text>
     </div>
   </naive-theme>

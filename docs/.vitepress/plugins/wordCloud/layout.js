@@ -165,7 +165,7 @@ var getItemExtraData = function (item) {
 
 // Based on http://jsfromhell.com/array/shuffle
 var shuffleArray = function shuffleArray(arr) {
-  for (var j, x, i = arr.length; i; ) {
+  for (var j, x, i = arr.length; i;) {
     j = Math.floor(Math.random() * i);
     x = arr[--i];
     arr[i] = arr[j];

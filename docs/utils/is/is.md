@@ -6,7 +6,7 @@ import demoIs from './demoIs.vue';
 import demoIsBoolean from './demoIsBoolean.vue';
 import demoIsNumber from './demoIsNumber.vue';
 import demoIsValidNumber from './demoIsValidNumber.vue';
-import demoIsInteger from './demoIsInteger.vue';
+import demoIsNumeric from './demoIsNumeric.vue';
 import demoIsNaturalNumber from './demoIsNaturalNumber.vue';
 import demoIsFloat from './demoIsFloat.vue';
 import demoIsString from './demoIsString.vue';
@@ -46,7 +46,7 @@ import demoIsElementInViewport from './demoIsElementInViewport.vue';
 import demoIsElementFocused from './demoIsElementFocused.vue';
 import demoIsElementOrDescendantFocused from './demoIsElementOrDescendantFocused.vue';
 import demoIsInChina from './demoIsInChina.vue';
-import demoIsInWgs84 from './demoIsInWgs84.vue';
+import demoIsWgs84 from './demoIsWgs84.vue';
 import demoIsWebMercator from './demoIsWebMercator.vue';
 </script>
 
@@ -80,7 +80,6 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 | `type`       | 是       | 需要判断值的类型，注意首字母大写 | `string` |            |
 
 ::: info 相关信息
-
 支持判断的类型包括：
 
 - `String` - 字符串
@@ -103,8 +102,7 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 - `File` - 文件
 - `Blob` - 二进制大对象
 - `Promise` - Promise对象
-
-:::
+  :::
 
 #### <divider-return /> {#return1}
 
@@ -117,19 +115,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isBoolean
 
 判断是否是 `Boolean` 类型
-
 <div class="code-border">
 
 #### <divider-base /> {#base2}
 
 <demoIsBoolean />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsBoolean.vue
-
 </details>
 
 #### <divider-param /> {#param2}
@@ -149,19 +142,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isNumber
 
 判断是否是 `number` 类型
-
 <div class="code-border">
 
 #### <divider-base /> {#base3}
 
 <demoIsNumber />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsNumber.vue
-
 </details>
 
 #### <divider-param /> {#param3}
@@ -181,19 +169,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isValidNumber
 
 判断是否为有效数字（数字，且不是NaN也不是无穷大）
-
 <div class="code-border">
 
 #### <divider-base /> {#base4}
 
 <demoIsValidNumber />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsValidNumber.vue
-
 </details>
 
 #### <divider-param /> {#param4}
@@ -210,22 +193,17 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 </div>
 
-## isInteger
+## isNumeric
 
-判断是否是整数类型
-
+判断是否为数字类（有效数字 或 bigint）
 <div class="code-border">
 
 #### <divider-base /> {#base5}
 
-<demoIsInteger />
-
+<demoIsNumeric />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsInteger.vue
-
+<<< @/utils/is/demoIsNumeric.vue
 </details>
 
 #### <divider-param /> {#param5}
@@ -236,28 +214,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return5}
 
-| **名称**  | **说明**                          |
-| --------- | --------------------------------- |
-| `boolean` | true（是整数）、false（不是整数） |
+| **名称**  | **说明**                  |
+| --------- | ------------------------- |
+| `boolean` | true（是）、false（不是） |
 
 </div>
 
 ## isNaturalNumber
 
 判断是否是自然数 (非负整数：0, 1, 2, 3, ...)
-
 <div class="code-border">
 
 #### <divider-base /> {#base6}
 
 <demoIsNaturalNumber />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsNaturalNumber.vue
-
 </details>
 
 #### <divider-param /> {#param6}
@@ -268,8 +241,8 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return6}
 
-| **名称**  | **说明**                          |
-| --------- | --------------------------------- |
+| **名称**  | **说明**                              |
+| --------- | ------------------------------------- |
 | `boolean` | true（是自然数）、false（不是自然数） |
 
 </div>
@@ -277,19 +250,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isFloat
 
 判断是否是浮点数类型
-
 <div class="code-border">
 
 #### <divider-base /> {#base7}
 
 <demoIsFloat />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsFloat.vue
-
 </details>
 
 #### <divider-param /> {#param7}
@@ -309,19 +277,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isString
 
 判断是否是 `string` 类型
-
 <div class="code-border">
 
 #### <divider-base /> {#base8}
 
 <demoIsString />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsString.vue
-
 </details>
 
 #### <divider-param /> {#param8}
@@ -341,19 +304,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isUndefined
 
 判断是否是 `undefined` 类型
-
 <div class="code-border">
 
 #### <divider-base /> {#base9}
 
 <demoIsUndefined />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsUndefined.vue
-
 </details>
 
 #### <divider-param /> {#param9}
@@ -373,19 +331,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isNull
 
 判断是否是 `null` 类型
-
 <div class="code-border">
 
 #### <divider-base /> {#base10}
 
 <demoIsNull />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsNull.vue
-
 </details>
 
 #### <divider-param /> {#param10}
@@ -405,51 +358,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isSymbol
 
 判断是否是 `symbol` 类型
-
-<div class="code-border">
-
-#### <divider-base /> {#base10}
-
-<demoIsSymbol />
-
-<details>
-
-<summary>查看代码</summary>
-
-<<< @/utils/is/demoIsSymbol.vue
-
-</details>
-
-#### <divider-param /> {#param10}
-
-| **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
-| ------------ | -------- | ------------ | -------- | ---------- |
-| `val`        | 是       | 需要判断的值 | `any`    |            |
-
-#### <divider-return /> {#return10}
-
-| **名称**  | **说明**                                      |
-| --------- | --------------------------------------------- |
-| `boolean` | true（是Symbol类型）、false（不是Symbol类型） |
-
-</div>
-
-## isArray
-
-判断是否是 `array` 类型
-
 <div class="code-border">
 
 #### <divider-base /> {#base11}
 
-<demoIsArray />
-
+<demoIsSymbol />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsArray.vue
-
+<<< @/utils/is/demoIsSymbol.vue
 </details>
 
 #### <divider-param /> {#param11}
@@ -460,28 +376,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return11}
 
-| **名称**  | **说明**                                    |
-| --------- | ------------------------------------------- |
-| `boolean` | true（是Array类型）、false（不是Array类型） |
+| **名称**  | **说明**                                      |
+| --------- | --------------------------------------------- |
+| `boolean` | true（是Symbol类型）、false（不是Symbol类型） |
 
 </div>
 
-## isTypedArray
+## isArray
 
-判断是否是 `typed array` 类型
-
+判断是否是 `array` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base12}
 
-<demoIsTypedArray />
-
+<demoIsArray />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsTypedArray.vue
-
+<<< @/utils/is/demoIsArray.vue
 </details>
 
 #### <divider-param /> {#param12}
@@ -492,28 +403,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return12}
 
-| **名称**  | **说明**                                              |
-| --------- | ----------------------------------------------------- |
-| `boolean` | true（是TypedArray类型）、false（不是TypedArray类型） |
+| **名称**  | **说明**                                    |
+| --------- | ------------------------------------------- |
+| `boolean` | true（是Array类型）、false（不是Array类型） |
 
 </div>
 
-## isArrayLength
+## isTypedArray
 
-判断是否是有效的数组长度
-
+判断是否是 `typed array` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base13}
 
-<demoIsArrayLength />
-
+<demoIsTypedArray />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsArrayLength.vue
-
+<<< @/utils/is/demoIsTypedArray.vue
 </details>
 
 #### <divider-param /> {#param13}
@@ -526,26 +432,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                              |
 | --------- | ----------------------------------------------------- |
-| `boolean` | true（是有效的数组长度）、false（不是有效的数组长度） |
+| `boolean` | true（是TypedArray类型）、false（不是TypedArray类型） |
 
 </div>
 
-## isArrayLike
+## isArrayLength
 
-判断是否是类数组对象
-
+判断是否是有效的数组长度
 <div class="code-border">
 
 #### <divider-base /> {#base14}
 
-<demoIsArrayLike />
-
+<demoIsArrayLength />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsArrayLike.vue
-
+<<< @/utils/is/demoIsArrayLength.vue
 </details>
 
 #### <divider-param /> {#param14}
@@ -556,28 +457,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return14}
 
-| **名称**  | **说明**                                      |
-| --------- | --------------------------------------------- |
-| `boolean` | true（是类数组对象）、false（不是类数组对象） |
+| **名称**  | **说明**                                              |
+| --------- | ----------------------------------------------------- |
+| `boolean` | true（是有效的数组长度）、false（不是有效的数组长度） |
 
 </div>
 
-## isDate
+## isArrayLike
 
-判断是否是 `date` 类型
-
+判断是否是类数组对象
 <div class="code-border">
 
 #### <divider-base /> {#base15}
 
-<demoIsDate />
-
+<demoIsArrayLike />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsDate.vue
-
+<<< @/utils/is/demoIsArrayLike.vue
 </details>
 
 #### <divider-param /> {#param15}
@@ -588,28 +484,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return15}
 
-| **名称**  | **说明**                                  |
-| --------- | ----------------------------------------- |
-| `boolean` | true（是Date类型）、false（不是Date类型） |
+| **名称**  | **说明**                                      |
+| --------- | --------------------------------------------- |
+| `boolean` | true（是类数组对象）、false（不是类数组对象） |
 
 </div>
 
-## isMap
+## isDate
 
-判断是否是 `map` 类型
-
+判断是否是 `date` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base16}
 
-<demoIsMap />
-
+<demoIsDate />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsMap.vue
-
+<<< @/utils/is/demoIsDate.vue
 </details>
 
 #### <divider-param /> {#param16}
@@ -620,28 +511,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return16}
 
-| **名称**  | **说明**                                |
-| --------- | --------------------------------------- |
-| `boolean` | true（是Map类型）、false（不是Map类型） |
+| **名称**  | **说明**                                  |
+| --------- | ----------------------------------------- |
+| `boolean` | true（是Date类型）、false（不是Date类型） |
 
 </div>
 
-## isSet
+## isMap
 
-判断是否是 `set` 类型
-
+判断是否是 `map` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base17}
 
-<demoIsSet />
-
+<demoIsMap />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsSet.vue
-
+<<< @/utils/is/demoIsMap.vue
 </details>
 
 #### <divider-param /> {#param17}
@@ -654,26 +540,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                |
 | --------- | --------------------------------------- |
-| `boolean` | true（是Set类型）、false（不是Set类型） |
+| `boolean` | true（是Map类型）、false（不是Map类型） |
 
 </div>
 
-## isRegExp
+## isSet
 
-判断是否是 `regexp` 类型
-
+判断是否是 `set` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base18}
 
-<demoIsRegExp />
-
+<demoIsSet />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsRegExp.vue
-
+<<< @/utils/is/demoIsSet.vue
 </details>
 
 #### <divider-param /> {#param18}
@@ -684,28 +565,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return18}
 
-| **名称**  | **说明**                                      |
-| --------- | --------------------------------------------- |
-| `boolean` | true（是RegExp类型）、false（不是RegExp类型） |
+| **名称**  | **说明**                                |
+| --------- | --------------------------------------- |
+| `boolean` | true（是Set类型）、false（不是Set类型） |
 
 </div>
 
-## isObject
+## isRegExp
 
-判断是否是 `object` 类型
-
+判断是否是 `regexp` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base19}
 
-<demoIsObject />
-
+<demoIsRegExp />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsObject.vue
-
+<<< @/utils/is/demoIsRegExp.vue
 </details>
 
 #### <divider-param /> {#param19}
@@ -718,26 +594,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
-| `boolean` | true（是Object类型）、false（不是Object类型） |
+| `boolean` | true（是RegExp类型）、false（不是RegExp类型） |
 
 </div>
 
-## isPlainObject
+## isObject
 
-判断是否是纯对象
-
+判断是否是 `object` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base20}
 
-<demoIsPlainObject />
-
+<demoIsObject />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsPlainObject.vue
-
+<<< @/utils/is/demoIsObject.vue
 </details>
 
 #### <divider-param /> {#param20}
@@ -748,28 +619,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return20}
 
-| **名称**  | **说明**                              |
-| --------- | ------------------------------------- |
-| `boolean` | true（是纯对象）、false（不是纯对象） |
+| **名称**  | **说明**                                      |
+| --------- | --------------------------------------------- |
+| `boolean` | true（是Object类型）、false（不是Object类型） |
 
 </div>
 
-## isFunction
+## isPlainObject
 
-判断是否是 `function` 类型
-
+判断是否是纯对象
 <div class="code-border">
 
 #### <divider-base /> {#base21}
 
-<demoIsFunction />
-
+<demoIsPlainObject />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsFunction.vue
-
+<<< @/utils/is/demoIsPlainObject.vue
 </details>
 
 #### <divider-param /> {#param21}
@@ -780,28 +646,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return21}
 
-| **名称**  | **说明**                                          |
-| --------- | ------------------------------------------------- |
-| `boolean` | true（是Function类型）、false（不是Function类型） |
+| **名称**  | **说明**                              |
+| --------- | ------------------------------------- |
+| `boolean` | true（是纯对象）、false（不是纯对象） |
 
 </div>
 
-## isPromise
+## isFunction
 
-判断是否是 `promise` 类型
-
+判断是否是 `function` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base22}
 
-<demoIsPromise />
-
+<demoIsFunction />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsPromise.vue
-
+<<< @/utils/is/demoIsFunction.vue
 </details>
 
 #### <divider-param /> {#param22}
@@ -812,28 +673,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return22}
 
-| **名称**  | **说明**                                        |
-| --------- | ----------------------------------------------- |
-| `boolean` | true（是Promise类型）、false（不是Promise类型） |
+| **名称**  | **说明**                                          |
+| --------- | ------------------------------------------------- |
+| `boolean` | true（是Function类型）、false（不是Function类型） |
 
 </div>
 
-## isPrimitive
+## isPromise
 
-判断是否是原始类型
-
+判断是否是 `promise` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base23}
 
-<demoIsPrimitive />
-
+<demoIsPromise />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsPrimitive.vue
-
+<<< @/utils/is/demoIsPromise.vue
 </details>
 
 #### <divider-param /> {#param23}
@@ -844,28 +700,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return23}
 
-| **名称**  | **说明**                                  |
-| --------- | ----------------------------------------- |
-| `boolean` | true（是原始类型）、false（不是原始类型） |
+| **名称**  | **说明**                                        |
+| --------- | ----------------------------------------------- |
+| `boolean` | true（是Promise类型）、false（不是Promise类型） |
 
 </div>
 
-## isEmpty
+## isPrimitive
 
-判断值是否为空
-
+判断是否是原始类型
 <div class="code-border">
 
 #### <divider-base /> {#base24}
 
-<demoIsEmpty />
-
+<demoIsPrimitive />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsEmpty.vue
-
+<<< @/utils/is/demoIsPrimitive.vue
 </details>
 
 #### <divider-param /> {#param24}
@@ -876,28 +727,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return24}
 
-| **名称**  | **说明**                      |
-| --------- | ----------------------------- |
-| `boolean` | true（为空）、false（不为空） |
+| **名称**  | **说明**                                  |
+| --------- | ----------------------------------------- |
+| `boolean` | true（是原始类型）、false（不是原始类型） |
 
 </div>
 
-## isObjectEmpty
+## isEmpty
 
-判断对象是否为空
-
+判断值是否为空
 <div class="code-border">
 
 #### <divider-base /> {#base25}
 
-<demoIsObjectEmpty />
-
+<demoIsEmpty />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsObjectEmpty.vue
-
+<<< @/utils/is/demoIsEmpty.vue
 </details>
 
 #### <divider-param /> {#param25}
@@ -908,28 +754,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return25}
 
-| **名称**  | **说明**                              |
-| --------- | ------------------------------------- |
-| `boolean` | true（对象为空）、false（对象不为空） |
+| **名称**  | **说明**                      |
+| --------- | ----------------------------- |
+| `boolean` | true（为空）、false（不为空） |
 
 </div>
 
-## isJsonString
+## isObjectEmpty
 
-判断是否是有效的JSON字符串
-
+判断对象是否为空
 <div class="code-border">
 
 #### <divider-base /> {#base26}
 
-<demoIsJsonString />
-
+<demoIsObjectEmpty />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsJsonString.vue
-
+<<< @/utils/is/demoIsObjectEmpty.vue
 </details>
 
 #### <divider-param /> {#param26}
@@ -940,28 +781,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return26}
 
-| **名称**  | **说明**                                                  |
-| --------- | --------------------------------------------------------- |
-| `boolean` | true（是有效的JSON字符串）、false（不是有效的JSON字符串） |
+| **名称**  | **说明**                              |
+| --------- | ------------------------------------- |
+| `boolean` | true（对象为空）、false（对象不为空） |
 
 </div>
 
-## isBlob
+## isJsonString
 
-判断是否是 `blob` 类型
-
+判断是否是有效的JSON字符串
 <div class="code-border">
 
 #### <divider-base /> {#base27}
 
-<demoIsBlob />
-
+<demoIsJsonString />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsBlob.vue
-
+<<< @/utils/is/demoIsJsonString.vue
 </details>
 
 #### <divider-param /> {#param27}
@@ -972,28 +808,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return27}
 
-| **名称**  | **说明**                                  |
-| --------- | ----------------------------------------- |
-| `boolean` | true（是Blob类型）、false（不是Blob类型） |
+| **名称**  | **说明**                                                  |
+| --------- | --------------------------------------------------------- |
+| `boolean` | true（是有效的JSON字符串）、false（不是有效的JSON字符串） |
 
 </div>
 
-## isBase64
+## isBlob
 
-判断是否是有效的Base64字符串
-
+判断是否是 `blob` 类型
 <div class="code-border">
 
 #### <divider-base /> {#base28}
 
-<demoIsBase64 />
-
+<demoIsBlob />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsBase64.vue
-
+<<< @/utils/is/demoIsBlob.vue
 </details>
 
 #### <divider-param /> {#param28}
@@ -1004,28 +835,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return28}
 
-| **名称**  | **说明**                                                      |
-| --------- | ------------------------------------------------------------- |
-| `boolean` | true（是有效的Base64字符串）、false（不是有效的Base64字符串） |
+| **名称**  | **说明**                                  |
+| --------- | ----------------------------------------- |
+| `boolean` | true（是Blob类型）、false（不是Blob类型） |
 
 </div>
 
-## isElement
+## isBase64
 
-判断是否是DOM元素
-
+判断是否是有效的Base64字符串
 <div class="code-border">
 
 #### <divider-base /> {#base29}
 
-<demoIsElement />
-
+<demoIsBase64 />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsElement.vue
-
+<<< @/utils/is/demoIsBase64.vue
 </details>
 
 #### <divider-param /> {#param29}
@@ -1036,28 +862,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return29}
 
-| **名称**  | **说明**                                |
-| --------- | --------------------------------------- |
-| `boolean` | true（是DOM元素）、false（不是DOM元素） |
+| **名称**  | **说明**                                                      |
+| --------- | ------------------------------------------------------------- |
+| `boolean` | true（是有效的Base64字符串）、false（不是有效的Base64字符串） |
 
 </div>
 
-## isWindow
+## isElement
 
-判断是否是window对象
-
+判断是否是DOM元素
 <div class="code-border">
 
 #### <divider-base /> {#base30}
 
-<demoIsWindow />
-
+<demoIsElement />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsWindow.vue
-
+<<< @/utils/is/demoIsElement.vue
 </details>
 
 #### <divider-param /> {#param30}
@@ -1068,28 +889,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return30}
 
-| **名称**  | **说明**                                      |
-| --------- | --------------------------------------------- |
-| `boolean` | true（是window对象）、false（不是window对象） |
+| **名称**  | **说明**                                |
+| --------- | --------------------------------------- |
+| `boolean` | true（是DOM元素）、false（不是DOM元素） |
 
 </div>
 
-## isBrowser
+## isWindow
 
-判断是否是浏览器环境
-
+判断是否是window对象
 <div class="code-border">
 
 #### <divider-base /> {#base31}
 
-<demoIsBrowser />
-
+<demoIsWindow />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsBrowser.vue
-
+<<< @/utils/is/demoIsWindow.vue
 </details>
 
 #### <divider-param /> {#param31}
@@ -1102,26 +918,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
-| `boolean` | true（是浏览器环境）、false（不是浏览器环境） |
+| `boolean` | true（是window对象）、false（不是window对象） |
 
 </div>
 
-## isClient
+## isBrowser
 
-判断是否是客户端环境
-
+判断是否是浏览器环境
 <div class="code-border">
 
 #### <divider-base /> {#base32}
 
-<demoIsClient />
-
+<demoIsBrowser />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsClient.vue
-
+<<< @/utils/is/demoIsBrowser.vue
 </details>
 
 #### <divider-param /> {#param32}
@@ -1134,26 +945,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
-| `boolean` | true（是客户端环境）、false（不是客户端环境） |
+| `boolean` | true（是浏览器环境）、false（不是浏览器环境） |
 
 </div>
 
-## isServer
+## isClient
 
-判断是否是服务端环境
-
+判断是否是客户端环境
 <div class="code-border">
 
 #### <divider-base /> {#base33}
 
-<demoIsServer />
-
+<demoIsClient />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsServer.vue
-
+<<< @/utils/is/demoIsClient.vue
 </details>
 
 #### <divider-param /> {#param33}
@@ -1166,26 +972,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
-| `boolean` | true（是服务端环境）、false（不是服务端环境） |
+| `boolean` | true（是客户端环境）、false（不是客户端环境） |
 
 </div>
 
-## isValidDate
+## isServer
 
-判断是否是有效的日期
-
+判断是否是服务端环境
 <div class="code-border">
 
 #### <divider-base /> {#base34}
 
-<demoIsValidDate />
-
+<demoIsServer />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsValidDate.vue
-
+<<< @/utils/is/demoIsServer.vue
 </details>
 
 #### <divider-param /> {#param34}
@@ -1198,26 +999,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
-| `boolean` | true（是有效的日期）、false（不是有效的日期） |
+| `boolean` | true（是服务端环境）、false（不是服务端环境） |
 
 </div>
 
-## isToday
+## isValidDate
 
-判断日期是否是今天
-
+判断是否是有效的日期
 <div class="code-border">
 
 #### <divider-base /> {#base35}
 
-<demoIsToday />
-
+<demoIsValidDate />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsToday.vue
-
+<<< @/utils/is/demoIsValidDate.vue
 </details>
 
 #### <divider-param /> {#param35}
@@ -1228,28 +1024,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return35}
 
-| **名称**  | **说明**                          |
-| --------- | --------------------------------- |
-| `boolean` | true（是今天）、false（不是今天） |
+| **名称**  | **说明**                                      |
+| --------- | --------------------------------------------- |
+| `boolean` | true（是有效的日期）、false（不是有效的日期） |
 
 </div>
 
-## isLeapYear
+## isToday
 
-判断是否是闰年
-
+判断日期是否是今天
 <div class="code-border">
 
 #### <divider-base /> {#base36}
 
-<demoIsLeapYear />
-
+<demoIsToday />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsLeapYear.vue
-
+<<< @/utils/is/demoIsToday.vue
 </details>
 
 #### <divider-param /> {#param36}
@@ -1262,6 +1053,33 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                          |
 | --------- | --------------------------------- |
+| `boolean` | true（是今天）、false（不是今天） |
+
+</div>
+
+## isLeapYear
+
+判断是否是闰年
+<div class="code-border">
+
+#### <divider-base /> {#base37}
+
+<demoIsLeapYear />
+<details>
+<summary>查看代码</summary>
+<<< @/utils/is/demoIsLeapYear.vue
+</details>
+
+#### <divider-param /> {#param37}
+
+| **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
+| ------------ | -------- | ------------ | -------- | ---------- |
+| `val`        | 是       | 需要判断的值 | `any`    |            |
+
+#### <divider-return /> {#return37}
+
+| **名称**  | **说明**                          |
+| --------- | --------------------------------- |
 | `boolean` | true（是闰年）、false（不是闰年） |
 
 </div>
@@ -1269,29 +1087,24 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isEqualObject
 
 判断两个对象是否相等
-
 <div class="code-border">
 
-#### <divider-base /> {#base37}
+#### <divider-base /> {#base38}
 
 <demoIsEqualObject />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsEqualObject.vue
-
 </details>
 
-#### <divider-param /> {#param37}
+#### <divider-param /> {#param38}
 
 | **参数属性** | **必传** | **说明**   | **类型** | **默认值** |
 | ------------ | -------- | ---------- | -------- | ---------- |
 | `obj1`       | 是       | 第一个对象 | `any`    |            |
 | `obj2`       | 是       | 第二个对象 | `any`    |            |
 
-#### <divider-return /> {#return37}
+#### <divider-return /> {#return38}
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
@@ -1302,29 +1115,24 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isEqualArray
 
 判断两个数组是否相等
-
 <div class="code-border">
 
-#### <divider-base /> {#base38}
+#### <divider-base /> {#base39}
 
 <demoIsEqualArray />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsEqualArray.vue
-
 </details>
 
-#### <divider-param /> {#param38}
+#### <divider-param /> {#param39}
 
 | **参数属性** | **必传** | **说明**   | **类型** | **默认值** |
 | ------------ | -------- | ---------- | -------- | ---------- |
 | `arr1`       | 是       | 第一个数组 | `any`    |            |
 | `arr2`       | 是       | 第二个数组 | `any`    |            |
 
-#### <divider-return /> {#return38}
+#### <divider-return /> {#return39}
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
@@ -1335,29 +1143,24 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isEqual
 
 判断两个值是否相等
-
 <div class="code-border">
 
-#### <divider-base /> {#base39}
+#### <divider-base /> {#base40}
 
 <demoIsEqual />
-
 <details>
-
 <summary>查看代码</summary>
-
 <<< @/utils/is/demoIsEqual.vue
-
 </details>
 
-#### <divider-param /> {#param39}
+#### <divider-param /> {#param40}
 
 | **参数属性** | **必传** | **说明** | **类型** | **默认值** |
 | ------------ | -------- | -------- | -------- | ---------- |
 | `val1`       | 是       | 第一个值 | `any`    |            |
 | `val2`       | 是       | 第二个值 | `any`    |            |
 
-#### <divider-return /> {#return39}
+#### <divider-return /> {#return40}
 
 | **名称**  | **说明**                                  |
 | --------- | ----------------------------------------- |
@@ -1368,51 +1171,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isElementInViewport
 
 判断元素是否在视口中
-
-<div class="code-border">
-
-#### <divider-base /> {#base40}
-
-<demoIsElementInViewport />
-
-<details>
-
-<summary>查看代码</summary>
-
-<<< @/utils/is/demoIsElementInViewport.vue
-
-</details>
-
-#### <divider-param /> {#param40}
-
-| **参数属性** | **必传** | **说明** | **类型**      | **默认值** |
-| ------------ | -------- | -------- | ------------- | ---------- |
-| `element`    | 是       | DOM元素  | `HTMLElement` |            |
-
-#### <divider-return /> {#return40}
-
-| **名称**  | **说明**                                      |
-| --------- | --------------------------------------------- |
-| `boolean` | true（元素在视口中）、false（元素不在视口中） |
-
-</div>
-
-## isElementFocused
-
-判断元素是否获得焦点
-
 <div class="code-border">
 
 #### <divider-base /> {#base41}
 
-<demoIsElementFocused />
-
+<demoIsElementInViewport />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsElementFocused.vue
-
+<<< @/utils/is/demoIsElementInViewport.vue
 </details>
 
 #### <divider-param /> {#param41}
@@ -1425,26 +1191,21 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 | **名称**  | **说明**                                      |
 | --------- | --------------------------------------------- |
-| `boolean` | true（元素获得焦点）、false（元素未获得焦点） |
+| `boolean` | true（元素在视口中）、false（元素不在视口中） |
 
 </div>
 
-## isElementOrDescendantFocused
+## isElementFocused
 
-判断元素或其子元素是否获得焦点
-
+判断元素是否获得焦点
 <div class="code-border">
 
 #### <divider-base /> {#base42}
 
-<demoIsElementOrDescendantFocused />
-
+<demoIsElementFocused />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsElementOrDescendantFocused.vue
-
+<<< @/utils/is/demoIsElementFocused.vue
 </details>
 
 #### <divider-param /> {#param42}
@@ -1455,6 +1216,33 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return42}
 
+| **名称**  | **说明**                                      |
+| --------- | --------------------------------------------- |
+| `boolean` | true（元素获得焦点）、false（元素未获得焦点） |
+
+</div>
+
+## isElementOrDescendantFocused
+
+判断元素或其子元素是否获得焦点
+<div class="code-border">
+
+#### <divider-base /> {#base43}
+
+<demoIsElementOrDescendantFocused />
+<details>
+<summary>查看代码</summary>
+<<< @/utils/is/demoIsElementOrDescendantFocused.vue
+</details>
+
+#### <divider-param /> {#param43}
+
+| **参数属性** | **必传** | **说明** | **类型**      | **默认值** |
+| ------------ | -------- | -------- | ------------- | ---------- |
+| `element`    | 是       | DOM元素  | `HTMLElement` |            |
+
+#### <divider-return /> {#return43}
+
 | **名称**  | **说明**                                                            |
 | --------- | ------------------------------------------------------------------- |
 | `boolean` | true（元素或其子元素获得焦点）、false（元素及其子元素均未获得焦点） |
@@ -1464,51 +1252,14 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 ## isWgs84
 
 判断坐标是否是 wgs84 坐标范围
-
-<div class="code-border">
-
-#### <divider-base /> {#base43}
-
-<demoIsInWgs84 />
-
-<details>
-
-<summary>查看代码</summary>
-
-<<< @/utils/is/demoIsInWgs84.vue
-
-</details>
-
-#### <divider-param /> {#param43}
-
-| **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
-| ------------ | -------- | ------------ | -------- | ---------- |
-| `val`        | 是       | 需要判断的值 | `any`    |            |
-
-#### <divider-return /> {#return43}
-
-| **名称**  | **说明**                                  |
-| --------- | ----------------------------------------- |
-| `boolean` | true（是 wgs84 坐标范围）、false（不是 wgs84 坐标范围） |
-
-</div>
-
-## isWebMercator
-
-判断坐标是否是 Web Mercator 坐标范围
-
 <div class="code-border">
 
 #### <divider-base /> {#base44}
 
-<demoIsWebMercator />
-
+<demoIsWgs84 />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsWebMercator.vue
-
+<<< @/utils/is/demoIsWgs84.vue
 </details>
 
 #### <divider-param /> {#param44}
@@ -1519,28 +1270,23 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 
 #### <divider-return /> {#return44}
 
-| **名称**  | **说明**                                  |
-| --------- | ----------------------------------------- |
-| `boolean` | true（是Web Mercator 坐标范围）、false（不是Web Mercator 坐标范围） |
+| **名称**  | **说明**                                                |
+| --------- | ------------------------------------------------------- |
+| `boolean` | true（是 wgs84 坐标范围）、false（不是 wgs84 坐标范围） |
 
 </div>
 
-## isInChina
+## isWebMercator
 
-判断坐标是否在中国境内（粗略判断）
-
+判断坐标是否是 Web Mercator 坐标范围
 <div class="code-border">
 
 #### <divider-base /> {#base45}
 
-<demoIsInChina />
-
+<demoIsWebMercator />
 <details>
-
 <summary>查看代码</summary>
-
-<<< @/utils/is/demoIsInChina.vue
-
+<<< @/utils/is/demoIsWebMercator.vue
 </details>
 
 #### <divider-param /> {#param45}
@@ -1550,6 +1296,33 @@ import demoIsWebMercator from './demoIsWebMercator.vue';
 | `val`        | 是       | 需要判断的值 | `any`    |            |
 
 #### <divider-return /> {#return45}
+
+| **名称**  | **说明**                                                            |
+| --------- | ------------------------------------------------------------------- |
+| `boolean` | true（是Web Mercator 坐标范围）、false（不是Web Mercator 坐标范围） |
+
+</div>
+
+## isInChina
+
+判断坐标是否在中国境内（粗略判断）
+<div class="code-border">
+
+#### <divider-base /> {#base46}
+
+<demoIsInChina />
+<details>
+<summary>查看代码</summary>
+<<< @/utils/is/demoIsInChina.vue
+</details>
+
+#### <divider-param /> {#param46}
+
+| **参数属性** | **必传** | **说明**     | **类型** | **默认值** |
+| ------------ | -------- | ------------ | -------- | ---------- |
+| `val`        | 是       | 需要判断的值 | `any`    |            |
+
+#### <divider-return /> {#return46}
 
 | **名称**  | **说明**                                  |
 | --------- | ----------------------------------------- |

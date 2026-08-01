@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { strSubEllipsis } from "@anyuan/utils";
+import { strEllipsis } from "@anyuan/utils";
 
-// strSubEllipsis 测试数据
-const strSubEllipsisRes = ref<
+// strEllipsis 测试数据
+const strEllipsisRes = ref<
   Array<{ label: string; value: string | number; len?: number }>
 >([]);
-strSubEllipsisRes.value = [
+strEllipsisRes.value = [
   { label: "默认长度(3)", value: "Hello World" },
   { label: "指定长度(5)", value: "Hello World", len: 5 },
   { label: "短于长度", value: "Hi", len: 5 },
@@ -20,20 +20,18 @@ strSubEllipsisRes.value = [
 <template>
   <naive-theme>
     <div
-      v-for="(item, index) in strSubEllipsisRes"
+      v-for="(item, index) in strEllipsisRes"
       :key="index"
       className="flex flex-col justify-center mt-2"
     >
       <div>
         <span className="font-bold">{{ item.label }}</span>
         <span className="ml-2">
-          strSubEllipsis("{{ item.value }}"{{
-            item.len ? `, ${item.len}` : ""
-          }})
+          strEllipsis("{{ item.value }}"{{ item.len ? `, ${item.len}` : "" }})
         </span>
       </div>
       <n-gradient-text type="info">
-        // {{ strSubEllipsis(item.value, item.len) }}
+        // {{ strEllipsis(item.value, item.len) }}
       </n-gradient-text>
     </div>
   </naive-theme>

@@ -20,11 +20,11 @@ getRemainTimeRes.value = [
   {
     label: "还剩1年",
     value: new Date(now.getTime() + 13 * 30 * 24 * 60 * 60 * 1000)
-  },
-  { label: "已过期", value: new Date(now.getTime() - 60 * 1000) },
-  { label: "无效日期", value: "Invalid Date" },
-  { label: "空字符串", value: "" },
-  { label: "null", value: null }
+  }
+  // { label: "已过期", value: new Date(now.getTime() - 60 * 1000) },
+  // { label: "无效日期", value: "Invalid Date" },
+  // { label: "空字符串", value: "" },
+  // { label: "null", value: null }
 ];
 </script>
 

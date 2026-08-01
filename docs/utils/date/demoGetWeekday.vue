@@ -9,8 +9,8 @@ const getWeekdayRes = ref<
 getWeekdayRes.value = [
   { label: "当前日期", value: new Date() },
   { label: "指定日期", value: "2024-01-15" },
-  { label: "自定义前缀", value: new Date(), prefix: "周" },
-  { label: "无效日期", value: "Invalid Date" }
+  { label: "自定义前缀", value: new Date(), prefix: "周" }
+  // { label: "无效日期", value: "Invalid Date" }
 ];
 </script>
 

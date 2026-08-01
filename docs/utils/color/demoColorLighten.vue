@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { lighten } from "@anyuan/utils";
+import { colorLighten } from "@anyuan/utils";
 
-// lighten 测试数据
+// colorLighten 测试数据
 const lightenRes = ref<Array<{ label: string; value: any; level: number }>>([]);
 lightenRes.value = [
   { label: "标准8位HEX", value: "#ff000080", level: 0.8 },
@@ -25,11 +25,11 @@ lightenRes.value = [
       <div>
         <span className="font-bold">{{ item.label }}</span>
         <span className="ml-2">
-          lighten("{{ item.value }}", {{ item.level }})
+          colorLighten("{{ item.value }}", {{ item.level }})
         </span>
       </div>
       <n-gradient-text type="info">
-        // {{ lighten(item.value, item.level) }}
+        // {{ colorLighten(item.value, item.level) }}
       </n-gradient-text>
     </div>
   </naive-theme>

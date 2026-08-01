@@ -21,12 +21,12 @@ getPassTimeRes.value = [
     label: "1年前",
     value: new Date(now.getTime() - 13 * 30 * 24 * 60 * 60 * 1000)
   },
-  { label: "未来时间", value: new Date(now.getTime() + 60 * 1000) },
-  { label: "无效日期", value: "Invalid Date" },
-  { label: "空字符串", value: "" },
-  { label: "null", value: null },
-  { label: "undefined", value: undefined },
-  { label: "数组", value: [] }
+  { label: "未来时间", value: new Date(now.getTime() + 60 * 1000) }
+  // { label: "无效日期", value: "Invalid Date" },
+  // { label: "空字符串", value: "" },
+  // { label: "null", value: null },
+  // { label: "undefined", value: undefined },
+  // { label: "数组", value: [] }
 ];
 </script>
 

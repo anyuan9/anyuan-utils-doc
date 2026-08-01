@@ -11,10 +11,10 @@ fahrenheit2CelsiusRes.value = [
   { label: "正浮点数", value: 23.456 },
   { label: "负整数", value: -23, decimals: 2 },
   { label: "负浮点数", value: -23.456, decimals: 2 },
-  { label: "零", value: 0 },
+  { label: "零", value: 0 }
   // { label: "NaN", value: NaN },
-  { label: "无穷大", value: Infinity },
-  { label: "负无穷大", value: -Infinity }
+  // { label: "无穷大", value: Infinity },
+  // { label: "负无穷大", value: -Infinity }
 ];
 </script>
 

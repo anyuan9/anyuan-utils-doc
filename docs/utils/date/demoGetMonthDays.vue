@@ -9,8 +9,8 @@ getMonthDaysRes.value = [
   { label: "2月(平年)", value: "2023-02-01" },
   { label: "2月(闰年)", value: "2024-02-01" },
   { label: "大月", value: "2024-01-01" },
-  { label: "小月", value: "2024-04-01" },
-  { label: "无效日期", value: "Invalid Date" }
+  { label: "小月", value: "2024-04-01" }
+  // { label: "无效日期", value: "Invalid Date" }
 ];
 </script>
 

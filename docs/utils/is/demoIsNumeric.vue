@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { isInteger } from "@anyuan/utils";
+import { isNumeric } from "@anyuan/utils";
 
-// isInteger 测试数据
+// isNumeric 测试数据
 const isIntegerRes = ref<Array<{ label: string; value: any }>>([]);
 isIntegerRes.value = [
   { label: "整数", value: 123 },
@@ -25,10 +25,10 @@ isIntegerRes.value = [
     >
       <div>
         <span className="font-bold">{{ item.label }}</span>
-        <span className="ml-2"> isInteger({{ item.value }}) </span>
+        <span className="ml-2"> isNumeric({{ item.value }}) </span>
       </div>
       <n-gradient-text type="info">
-        // {{ isInteger(item.value) }}
+        // {{ isNumeric(item.value) }}
       </n-gradient-text>
     </div>
   </naive-theme>

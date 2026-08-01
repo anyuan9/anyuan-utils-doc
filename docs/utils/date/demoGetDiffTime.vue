@@ -17,8 +17,8 @@ getDiffTimeRes.value = [
     start: "2024-01-01T10:30:00",
     end: "2024-01-02T12:45:30",
     unit: "auto"
-  },
-  { label: "无效日期", start: "Invalid Date", end: new Date() }
+  }
+  // { label: "无效日期", start: "Invalid Date", end: new Date() }
 ];
 </script>
 
